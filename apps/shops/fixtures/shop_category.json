@@ -1,0 +1,154 @@
+[
+  {
+    "model": "shops.ShopCategory",
+    "pk": 1,
+    "fields": {
+         "name": "Kiyim"
+    }
+
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 2,
+    "fields": {
+      "name": "Maishiy texnikalar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 3,
+    "fields": {
+      "name": "Ish yuritish buyumlari"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 4,
+    "fields": {
+      "name": "Boshqalar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 5,
+    "fields": {
+      "name": "Oziq-ovqatlar va Ichimliklar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 6,
+    "fields": {
+      "name": "Bog' va uy hayvonlari"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+
+    "pk": 7,
+    "fields": {
+      "name": "O'yinchoqlar, bolalar uchun mahsulotlar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+
+    "pk": 8,
+    "fields": {
+      "name": "Mebel va Uy jihozlari"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 9,
+    "fields": {
+      "name": "Sumkalar, oyoq kiyimlar va aksessuarlar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+
+    "pk": 10,
+    "fields": {
+      "name": "Kasmetika, salomatlik va go'zallik"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 11,
+    "fields": {
+      "name": "Kitoblar, Filmlar, Musiqalar va O'yinlar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 12,
+    "fields": {
+      "name": "Elektronika va Kompyuterlar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 13,
+    "fields": {
+      "name": "Restoran va kafelar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 14,
+    "fields": {
+      "name": "Zargarlik buyumlari"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 15,
+    "fields": {
+      "name": "San'at va fotografiya"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 16,
+    "fields": {
+      "name": "Uskunalar va uyni yaxshilash"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 17,
+    "fields": {
+      "name": "Sovg'alar, gullar va kollektsiyalar"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 18,
+    "fields": {
+      "name": "Ofis jihozlari"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+
+    "pk": 19,
+    "fields": {
+      "name": "Tamaki, vape va chekish"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 20,
+    "fields": {
+      "name": "Streaming, Onlayn darslar va dasturiy ta'minot"
+    }
+  },
+  {
+    "model": "shops.ShopCategory",
+    "pk": 21,
+    "fields": {
+      "name": "Avtomobilsozlik"
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "model": "shops.language",
+    "pk": 1,
+    "fields": {
+      "icon": "🇺🇿",
+      "title": "O'zbekcha",
+      "code": "uz"
+    }
+  },
+  {
+    "model": "shops.language",
+    "pk": 2,
+    "fields": {
+      "icon": "🇷🇺",
+      "title": "Русский",
+      "code": "ru"
+    }
+  },
+  {
+    "model": "shops.language",
+    "pk": 3,
+    "fields": {
+      "icon": "🇺🇸",
+      "title": "English",
+      "code": "en"
+    }
+  },
+  {
+    "model": "shops.language",
+    "pk": 4,
+    "fields": {
+      "icon": "🇹🇯",
+      "title": "Tоҷикӣ",
+      "code": "tg"
+    }
+  }
+]

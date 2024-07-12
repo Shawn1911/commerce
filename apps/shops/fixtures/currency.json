@@ -1,0 +1,698 @@
+[
+  {
+    "model": "shops.Currency",
+    "pk": 1,
+    "fields": {
+      "name": "UZS",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 2,
+    "fields": {
+      "name": "RUB",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 3,
+    "fields": {
+      "name": "KZT",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 4,
+    "fields": {
+      "name": "UAH",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 5,
+    "fields": {
+      "name": "KGS",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 6,
+    "fields": {
+      "name": "TJS",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 7,
+    "fields": {
+      "name": "AZN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 8,
+    "fields": {
+      "name": "AFN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 9,
+    "fields": {
+      "name": "USD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 10,
+    "fields": {
+      "name": "KRW",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 11,
+    "fields": {
+      "name": "AED",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 12,
+    "fields": {
+      "name": "ALL",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 13,
+    "fields": {
+      "name": "AMD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 14,
+    "fields": {
+      "name": "ARS",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 15,
+    "fields": {
+      "name": "AUD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 16,
+    "fields": {
+      "name": "BAM",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 17,
+    "fields": {
+      "name": "BDT",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 18,
+    "fields": {
+      "name": "BGN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 19,
+    "fields": {
+      "name": "BND",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 20,
+    "fields": {
+      "name": "BOB",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 21,
+    "fields": {
+      "name": "BRL",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 22,
+    "fields": {
+      "name": "BYN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 23,
+    "fields": {
+      "name": "CAD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 24,
+    "fields": {
+      "name": "CHF",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 25,
+    "fields": {
+      "name": "CLP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 26,
+    "fields": {
+      "name": "CNY",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 27,
+    "fields": {
+      "name": "COP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 28,
+    "fields": {
+      "name": "CRC",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 29,
+    "fields": {
+      "name": "CZK",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 30,
+    "fields": {
+      "name": "DKK",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 31,
+    "fields": {
+      "name": "DOP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 32,
+    "fields": {
+      "name": "DZD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 33,
+    "fields": {
+      "name": "EGP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 34,
+    "fields": {
+      "name": "ETB",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 35,
+    "fields": {
+      "name": "EUR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 36,
+    "fields": {
+      "name": "GBP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 37,
+    "fields": {
+      "name": "GEL",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 38,
+    "fields": {
+      "name": "GTQ",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 39,
+    "fields": {
+      "name": "HKD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 40,
+    "fields": {
+      "name": "HNL",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 41,
+    "fields": {
+      "name": "HRK",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 42,
+    "fields": {
+      "name": "HUF",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 43,
+    "fields": {
+      "name": "IDR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 44,
+    "fields": {
+      "name": "ILS",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 45,
+    "fields": {
+      "name": "INR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 46,
+    "fields": {
+      "name": "ISK",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 47,
+    "fields": {
+      "name": "JMD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 48,
+    "fields": {
+      "name": "JPY",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 49,
+    "fields": {
+      "name": "KES",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 50,
+    "fields": {
+      "name": "LBP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 51,
+    "fields": {
+      "name": "LKR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 52,
+    "fields": {
+      "name": "MAD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 53,
+    "fields": {
+      "name": "MDL",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 54,
+    "fields": {
+      "name": "MNT",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 55,
+    "fields": {
+      "name": "MUR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 56,
+    "fields": {
+      "name": "MVR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 57,
+    "fields": {
+      "name": "MXN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 58,
+    "fields": {
+      "name": "MYR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 59,
+    "fields": {
+      "name": "MZN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 60,
+    "fields": {
+      "name": "NGN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 61,
+    "fields": {
+      "name": "NIO",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 62,
+    "fields": {
+      "name": "NOK",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 63,
+    "fields": {
+      "name": "NPR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 64,
+    "fields": {
+      "name": "NZD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 65,
+    "fields": {
+      "name": "OMR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 66,
+    "fields": {
+      "name": "PAB",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 67,
+    "fields": {
+      "name": "PEN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 68,
+    "fields": {
+      "name": "PHP",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 69,
+    "fields": {
+      "name": "PKR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 70,
+    "fields": {
+      "name": "PLN",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 71,
+    "fields": {
+      "name": "PYG",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 72,
+    "fields": {
+      "name": "QAR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 73,
+    "fields": {
+      "name": "RON",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 74,
+    "fields": {
+      "name": "RSD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 75,
+    "fields": {
+      "name": "SAR",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 76,
+    "fields": {
+      "name": "SEK",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 77,
+    "fields": {
+      "name": "SGD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 78,
+    "fields": {
+      "name": "THB",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 79,
+    "fields": {
+      "name": "TRY",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 80,
+    "fields": {
+      "name": "TWD",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 81,
+    "fields": {
+      "name": "TZS",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 82,
+    "fields": {
+      "name": "UYU",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 83,
+    "fields": {
+      "name": "VEF",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 84,
+    "fields": {
+      "name": "VND",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 85,
+    "fields": {
+      "name": "XOF",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 86,
+    "fields": {
+      "name": "YER",
+      "order": 1
+    }
+  },
+  {
+    "model": "shops.Currency",
+    "pk": 87,
+    "fields": {
+      "name": "ZAR",
+      "order": 1
+    }
+  }
+]

@@ -1,0 +1,1374 @@
+[
+    {
+        "model": "shops.Country",
+        "pk": 1,
+        "fields": {
+            "title": "Afghanistan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 2,
+        "fields": {
+            "title": "Albania"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 3,
+        "fields": {
+            "title": "Algeria"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 4,
+        "fields": {
+            "title": "Andorra"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 5,
+        "fields": {
+            "title": "Angola"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 6,
+        "fields": {
+            "title": "Antigua and Barbuda"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 7,
+        "fields": {
+            "title": "Argentina"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 8,
+        "fields": {
+            "title": "Armenia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 9,
+        "fields": {
+            "title": "Australia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 10,
+        "fields": {
+            "title": "Austria"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 11,
+        "fields": {
+            "title": "Azerbaijan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 12,
+        "fields": {
+            "title": "The Bahamas"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 13,
+        "fields": {
+            "title": "Bahrain"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 14,
+        "fields": {
+            "title": "Bangladesh"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 15,
+        "fields": {
+            "title": "Barbados"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 16,
+        "fields": {
+            "title": "Belarus"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 17,
+        "fields": {
+            "title": "Belgium"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 18,
+        "fields": {
+            "title": "Belize"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 19,
+        "fields": {
+            "title": "Benin"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 20,
+        "fields": {
+            "title": "Bhutan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 21,
+        "fields": {
+            "title": "Bolivia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 22,
+        "fields": {
+            "title": "Bosnia and Herzegovina"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 23,
+        "fields": {
+            "title": "Botswana"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 24,
+        "fields": {
+            "title": "Brazil"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 25,
+        "fields": {
+            "title": "Brunei"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 26,
+        "fields": {
+            "title": "Bulgaria"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 27,
+        "fields": {
+            "title": "Burkina Faso"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 28,
+        "fields": {
+            "title": "Burundi"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 29,
+        "fields": {
+            "title": "Cabo Verde"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 30,
+        "fields": {
+            "title": "Cambodia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 31,
+        "fields": {
+            "title": "Cameroon"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 32,
+        "fields": {
+            "title": "Canada"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 33,
+        "fields": {
+            "title": "Central African Republic"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 34,
+        "fields": {
+            "title": "Chad"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 35,
+        "fields": {
+            "title": "Chile"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 36,
+        "fields": {
+            "title": "China"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 37,
+        "fields": {
+            "title": "Colombia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 38,
+        "fields": {
+            "title": "Comoros"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 39,
+        "fields": {
+            "title": "Congo, Democratic Republic of the"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 40,
+        "fields": {
+            "title": "Congo, Republic of the"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 41,
+        "fields": {
+            "title": "Costa Rica"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 42,
+        "fields": {
+            "title": "C\u00f4te d\u2019Ivoire"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 43,
+        "fields": {
+            "title": "Croatia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 44,
+        "fields": {
+            "title": "Cuba"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 45,
+        "fields": {
+            "title": "Cyprus"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 46,
+        "fields": {
+            "title": "Czech Republic"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 47,
+        "fields": {
+            "title": "Denmark"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 48,
+        "fields": {
+            "title": "Djibouti"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 49,
+        "fields": {
+            "title": "Dominica"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 50,
+        "fields": {
+            "title": "Dominican Republic"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 51,
+        "fields": {
+            "title": "East Timor (Timor-Leste)"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 52,
+        "fields": {
+            "title": "Ecuador"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 53,
+        "fields": {
+            "title": "Egypt"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 54,
+        "fields": {
+            "title": "El Salvador"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 55,
+        "fields": {
+            "title": "Equatorial Guinea"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 56,
+        "fields": {
+            "title": "Eritrea"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 57,
+        "fields": {
+            "title": "Estonia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 58,
+        "fields": {
+            "title": "Eswatini"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 59,
+        "fields": {
+            "title": "Ethiopia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 60,
+        "fields": {
+            "title": "Fiji"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 61,
+        "fields": {
+            "title": "Finland"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 62,
+        "fields": {
+            "title": "France"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 63,
+        "fields": {
+            "title": "Gabon"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 64,
+        "fields": {
+            "title": "The Gambia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 65,
+        "fields": {
+            "title": "Georgia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 66,
+        "fields": {
+            "title": "Germany"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 67,
+        "fields": {
+            "title": "Ghana"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 68,
+        "fields": {
+            "title": "Greece"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 69,
+        "fields": {
+            "title": "Grenada"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 70,
+        "fields": {
+            "title": "Guatemala"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 71,
+        "fields": {
+            "title": "Guinea"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 72,
+        "fields": {
+            "title": "Guinea-Bissau"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 73,
+        "fields": {
+            "title": "Guyana"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 74,
+        "fields": {
+            "title": "Haiti"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 75,
+        "fields": {
+            "title": "Honduras"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 76,
+        "fields": {
+            "title": "Hungary"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 77,
+        "fields": {
+            "title": "Iceland"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 78,
+        "fields": {
+            "title": "India"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 79,
+        "fields": {
+            "title": "Indonesia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 80,
+        "fields": {
+            "title": "Iran"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 81,
+        "fields": {
+            "title": "Iraq"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 82,
+        "fields": {
+            "title": "Ireland"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 83,
+        "fields": {
+            "title": "Israel"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 84,
+        "fields": {
+            "title": "Italy"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 85,
+        "fields": {
+            "title": "Jamaica"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 86,
+        "fields": {
+            "title": "Japan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 87,
+        "fields": {
+            "title": "Jordan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 88,
+        "fields": {
+            "title": "Kazakhstan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 89,
+        "fields": {
+            "title": "Kenya"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 90,
+        "fields": {
+            "title": "Kiribati"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 91,
+        "fields": {
+            "title": "Korea, North"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 92,
+        "fields": {
+            "title": "Korea, South"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 93,
+        "fields": {
+            "title": "Kosovo"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 94,
+        "fields": {
+            "title": "Kuwait"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 95,
+        "fields": {
+            "title": "Kyrgyzstan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 96,
+        "fields": {
+            "title": "Laos"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 97,
+        "fields": {
+            "title": "Latvia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 98,
+        "fields": {
+            "title": "Lebanon"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 99,
+        "fields": {
+            "title": "Lesotho"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 100,
+        "fields": {
+            "title": "Liberia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 101,
+        "fields": {
+            "title": "Libya"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 102,
+        "fields": {
+            "title": "Liechtenstein"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 103,
+        "fields": {
+            "title": "Lithuania"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 104,
+        "fields": {
+            "title": "Luxembourg"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 105,
+        "fields": {
+            "title": "Madagascar"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 106,
+        "fields": {
+            "title": "Malawi"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 107,
+        "fields": {
+            "title": "Malaysia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 108,
+        "fields": {
+            "title": "Maldives"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 109,
+        "fields": {
+            "title": "Mali"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 110,
+        "fields": {
+            "title": "Malta"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 111,
+        "fields": {
+            "title": "Marshall Islands"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 112,
+        "fields": {
+            "title": "Mauritania"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 113,
+        "fields": {
+            "title": "Mauritius"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 114,
+        "fields": {
+            "title": "Mexico"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 115,
+        "fields": {
+            "title": "Micronesia, Federated States of"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 116,
+        "fields": {
+            "title": "Moldova"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 117,
+        "fields": {
+            "title": "Monaco"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 118,
+        "fields": {
+            "title": "Mongolia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 119,
+        "fields": {
+            "title": "Montenegro"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 120,
+        "fields": {
+            "title": "Morocco"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 121,
+        "fields": {
+            "title": "Mozambique"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 122,
+        "fields": {
+            "title": "Myanmar (Burma)"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 123,
+        "fields": {
+            "title": "Namibia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 124,
+        "fields": {
+            "title": "Nauru"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 125,
+        "fields": {
+            "title": "Nepal"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 126,
+        "fields": {
+            "title": "Netherlands"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 127,
+        "fields": {
+            "title": "New Zealand"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 128,
+        "fields": {
+            "title": "Nicaragua"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 129,
+        "fields": {
+            "title": "Niger"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 130,
+        "fields": {
+            "title": "Nigeria"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 131,
+        "fields": {
+            "title": "North Macedonia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 132,
+        "fields": {
+            "title": "Norway"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 133,
+        "fields": {
+            "title": "Oman"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 134,
+        "fields": {
+            "title": "Pakistan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 135,
+        "fields": {
+            "title": "Palau"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 136,
+        "fields": {
+            "title": "Panama"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 137,
+        "fields": {
+            "title": "Papua New Guinea"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 138,
+        "fields": {
+            "title": "Paraguay"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 139,
+        "fields": {
+            "title": "Peru"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 140,
+        "fields": {
+            "title": "Philippines"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 141,
+        "fields": {
+            "title": "Poland"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 142,
+        "fields": {
+            "title": "Portugal"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 143,
+        "fields": {
+            "title": "Qatar"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 144,
+        "fields": {
+            "title": "Romania"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 145,
+        "fields": {
+            "title": "Russia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 146,
+        "fields": {
+            "title": "Rwanda"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 147,
+        "fields": {
+            "title": "Saint Kitts and Nevis"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 148,
+        "fields": {
+            "title": "Saint Lucia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 149,
+        "fields": {
+            "title": "Saint Vincent and the Grenadines"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 150,
+        "fields": {
+            "title": "Samoa"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 151,
+        "fields": {
+            "title": "San Marino"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 152,
+        "fields": {
+            "title": "Sao Tome and Principe"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 153,
+        "fields": {
+            "title": "Saudi Arabia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 154,
+        "fields": {
+            "title": "Senegal"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 155,
+        "fields": {
+            "title": "Serbia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 156,
+        "fields": {
+            "title": "Seychelles"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 157,
+        "fields": {
+            "title": "Sierra Leone"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 158,
+        "fields": {
+            "title": "Singapore"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 159,
+        "fields": {
+            "title": "Slovakia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 160,
+        "fields": {
+            "title": "Slovenia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 161,
+        "fields": {
+            "title": "Solomon Islands"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 162,
+        "fields": {
+            "title": "Somalia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 163,
+        "fields": {
+            "title": "South Africa"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 164,
+        "fields": {
+            "title": "Spain"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 165,
+        "fields": {
+            "title": "Sri Lanka"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 166,
+        "fields": {
+            "title": "Sudan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 167,
+        "fields": {
+            "title": "Sudan, South"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 168,
+        "fields": {
+            "title": "Suriname"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 169,
+        "fields": {
+            "title": "Sweden"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 170,
+        "fields": {
+            "title": "Switzerland"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 171,
+        "fields": {
+            "title": "Syria"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 172,
+        "fields": {
+            "title": "Taiwan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 173,
+        "fields": {
+            "title": "Tajikistan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 174,
+        "fields": {
+            "title": "Tanzania"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 175,
+        "fields": {
+            "title": "Thailand"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 176,
+        "fields": {
+            "title": "Togo"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 177,
+        "fields": {
+            "title": "Tonga"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 178,
+        "fields": {
+            "title": "Trinidad and Tobago"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 179,
+        "fields": {
+            "title": "Tunisia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 180,
+        "fields": {
+            "title": "Turkey"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 181,
+        "fields": {
+            "title": "Turkmenistan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 182,
+        "fields": {
+            "title": "Tuvalu"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 183,
+        "fields": {
+            "title": "Uganda"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 184,
+        "fields": {
+            "title": "Ukraine"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 185,
+        "fields": {
+            "title": "United Arab Emirates"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 186,
+        "fields": {
+            "title": "United Kingdom"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 187,
+        "fields": {
+            "title": "United States"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 188,
+        "fields": {
+            "title": "Uruguay"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 189,
+        "fields": {
+            "title": "Uzbekistan"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 190,
+        "fields": {
+            "title": "Vanuatu"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 191,
+        "fields": {
+            "title": "Vatican City"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 192,
+        "fields": {
+            "title": "Venezuela"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 193,
+        "fields": {
+            "title": "Vietnam"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 194,
+        "fields": {
+            "title": "Yemen"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 195,
+        "fields": {
+            "title": "Zambia"
+        }
+    },
+    {
+        "model": "shops.Country",
+        "pk": 196,
+        "fields": {
+            "title": "Zimbabwe"
+        }
+    }
+]
