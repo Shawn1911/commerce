@@ -6,29 +6,15 @@ apps
  - shops
 
 
-
 fixtures
-    - country(samariddin), currency(muhammad), shop-category(sunnat), language(tohir)
+    - country, currency, shop-category, language, services, fields, plan
 
-kategoriyalar
-mahsulotlar(dilshod)
-mijoz(tohir,muhammad)
-marketing(ibrohim, abduvohid)
-platforma()
-profile()
-sotuvlar(sunnat, dilmurod)
-xizmatlar(rahmatulloh, sunnatdev)
-sozlamalar(samariddin)
+------------------------------------------------------------------------
 
+User, ContentType, Plan, Order
 
+boshqa shopdagi promocode otamidimi yoqmi
 
-tohir -> Customer(users) +
-Plan -> Muhammad (users) +
-PaymentProvider(shops) -> Raxmatullox +
-DeliveryService(shops) -> Sunnatulloh +
-Shop(shops) -> Samariddin +
-
--------------
 
 
 
@@ -40,6 +26,4 @@ bir hil country larni qaytarebdi
 
 2.
 
-
-User, Plan, Product
 

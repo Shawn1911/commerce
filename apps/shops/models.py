@@ -1,5 +1,6 @@
 from django.db.models import Model, CharField, ForeignKey, CASCADE, TextField, TextChoices, ManyToManyField, \
-    IntegerField, FloatField, BooleanField, DateTimeField, OneToOneField, URLField, PositiveSmallIntegerField, TimeField
+    IntegerField, FloatField, BooleanField, DateTimeField, OneToOneField, URLField, PositiveSmallIntegerField, \
+    TimeField, DecimalField, CheckConstraint, Q, F
 
 from shared import CreatedBaseModel
 
@@ -57,7 +58,7 @@ class Shop(CreatedBaseModel):  # ✅
     status = CharField(max_length=8, choices=Status.choices, db_default=Status.ACTIVE)
     currency = ForeignKey("shops.Currency", CASCADE, verbose_name="Pul birligi")
     plan = ForeignKey('users.Plan', CASCADE, related_name='shops')
-
+    owner = ForeignKey('users.User', CASCADE, related_name='shops')
     lat = FloatField(blank=True, null=True)
     lon = FloatField(blank=True, null=True)
     starts_at = TimeField(blank=True, null=True, verbose_name="Dan")
@@ -140,7 +141,6 @@ class BroadCastMessage(Model):  # ✅
     lon = FloatField(blank=True, null=True, verbose_name="Lokatsiya lon")
     scheduled_time = DateTimeField(blank=True, null=True, verbose_name="Keyinroq jo'natish vaqti")
     received_users = IntegerField(default=0, verbose_name='Qabul qiluvchilar soni')
-    # TODO rasm bolishi kk
     status = CharField(max_length=20, choices=MessageStatus.choices, db_default=MessageStatus.PENDING,
                        verbose_name='Xabarning statusi')
     created_at = DateTimeField(auto_now_add=True, verbose_name='Yaratilgan sana')
@@ -172,7 +172,7 @@ class TelegramBot(Model):  # ✅
     shop = OneToOneField('shops.Shop', CASCADE, related_name='telegram_bots')
 
 
-class Category(Model):
+class Category(Model):  # ✅
     class Status(TextChoices):
         ACTIVE = 'active', 'Active'
         INACTIVE = 'inactive', 'Inactive'
@@ -184,5 +184,82 @@ class Category(Model):
     status = CharField(max_length=15, choices=Status.choices, db_default=Status.INACTIVE)
     description = TextField(null=True, blank=True)
     position = IntegerField(default=1)
+    shop = ForeignKey('shops.Shop', CASCADE, related_name='categories')
 
 
+class Weight(Model):  # ✅
+    name = CharField(max_length=10)
+
+
+class Length(Model):  # ✅
+    name = CharField(max_length=10)
+
+
+class Product(Model):  # ✅
+    class StockStatus(TextChoices):
+        FIXED = 'fixed', 'Fixed'
+        INDEFINITE = 'indefinite', 'Indefinite'
+        NOT_AVAILABLE = 'not_available', 'Not available'
+
+    class Unit(TextChoices):
+        ITEM = 'item', 'Item'
+        WEIGHT = 'weight', 'Weight'
+
+    name = CharField('Product nomi', max_length=100)
+    category = ForeignKey('shops.Category', CASCADE, related_name='products')
+    price = DecimalField('Sotuv narxi', max_digits=15, decimal_places=2)
+    full_price = DecimalField('Umumiy narxi', max_digits=15, decimal_places=2)
+    description = TextField()
+    has_available = BooleanField(default=True, verbose_name='MAxsulotni uchirish va yoqish')
+    weight = IntegerField(null=True, blank=True)
+    length = IntegerField(null=True, blank=True)
+    height = IntegerField(null=True, blank=True)
+    width = IntegerField(null=True, blank=True)
+
+    ikpu_code = IntegerField(null=True, blank=True, verbose_name='IKPU kod')
+    package_code = IntegerField(null=True, blank=True, verbose_name='qadoq kodi')
+    stock_status = CharField(max_length=100, choices=StockStatus.choices)
+    quantity = IntegerField(db_default=0, verbose_name='product soni status indefinite bulganda chiqadi')
+    barcode = IntegerField(null=True, blank=True, verbose_name='Barkod')
+    vat_percent = IntegerField(db_default=0, verbose_name='QQS foizi')
+    position = IntegerField(db_default=1, verbose_name='sort order')
+    internal_notes = TextField(nul=True, blank=True)
+    unit = CharField(max_length=20, choices=Unit.choices)
+    weight_class = ForeignKey('shops.Weight', CASCADE, related_name='weights')
+    length_class = ForeignKey('shops.Length', CASCADE, related_name='lengths')
+
+    class Meta:
+        constraints = [
+            CheckConstraint(check=Q(full_price__gte=F('price')), name='check_full_price')
+        ]
+
+
+class Attribute(Model):  # ✅
+    name = CharField(max_length=50)
+    product = ForeignKey('shops.Product', CASCADE, related_name='attributes')
+
+
+class AttributeValue(Model):  # ✅
+    value = CharField(max_length=20)
+    attribute = ForeignKey('shops.Attribute', CASCADE, related_name='values')
+
+
+class AttributeVariant(Model):  # ✅
+    name = CharField(max_length=100)
+    price = DecimalField('Sotuv narxi', max_digits=15, decimal_places=2)
+    full_price = DecimalField('Umumiy narxi', max_digits=15, decimal_places=2)
+    weight_class = ForeignKey('shops.Weight', CASCADE, null=True, blank=True, related_name='weights')
+    length_class_id = ForeignKey('shops.Length', CASCADE, null=True, blank=True, related_name='lengths')
+    weight = IntegerField(null=True, blank=True)
+    length = IntegerField(null=True, blank=True)
+    height = IntegerField(null=True, blank=True)
+    width = IntegerField(null=True, blank=True)
+    package_code = IntegerField(null=True, blank=True)
+    ikpu_code = IntegerField(null=True, blank=True)
+    stock_status = CharField(max_length=20)
+    quantity = IntegerField(null=True, blank=True)
+    unit = CharField(max_length=20)
+    barcode = IntegerField(null=True, blank=True)
+    has_available = BooleanField(db_default=False)
+    vat_percent = IntegerField(db_default=0)
+    product = ForeignKey('shops.Product', CASCADE, related_name='variants')
