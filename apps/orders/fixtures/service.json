@@ -1,0 +1,431 @@
+[
+  {
+    "model": "orders.Service",
+    "pk": 1,
+    "fields": {
+      "title": "Click (Telegram)",
+      "code": "click",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 2,
+    "fields": {
+      "title": "Yandex.Money",
+      "code": "yandex_money",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 3,
+    "fields": {
+      "title": "Payme (Telegram)",
+      "code": "payme",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 4,
+    "fields": {
+      "title": "Tranzzo",
+      "code": "tranzzo",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 5,
+    "fields": {
+      "title": "LiqPay",
+      "code": "liqpay",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 6,
+    "fields": {
+      "title": "Stripe",
+      "code": "stripe",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 7,
+    "fields": {
+      "title": "Sberbank",
+      "code": "sberbank",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 8,
+    "fields": {
+      "title": "Rave by Flutterwave",
+      "code": "rave_by_flutterwave",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 9,
+    "fields": {
+      "title": "Cash",
+      "code": "cash",
+      "type": "inplace",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 10,
+    "fields": {
+      "title": "Terminal",
+      "code": "terminal",
+      "type": "inplace",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 11,
+    "fields": {
+      "title": "Smart Glocal",
+      "code": "smart_glocal",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 12,
+    "fields": {
+      "title": "Unlimint",
+      "code": "unlimint",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 13,
+    "fields": {
+      "title": "Paykassma",
+      "code": "paykassma",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 14,
+    "fields": {
+      "title": "Bank 131",
+      "code": "bank_131",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 15,
+    "fields": {
+      "title": "LeoGaming",
+      "code": "leo_gaming",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 16,
+    "fields": {
+      "title": "Cascad",
+      "code": "cascad",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 17,
+    "fields": {
+      "title": "Portmone",
+      "code": "portmone",
+      "type": "telegram",
+      "description": null,
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 18,
+    "fields": {
+      "title": "Paymega",
+      "code": "paymega",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 19,
+    "fields": {
+      "title": "ECOMMPAY",
+      "code": "ecommpay",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 20,
+    "fields": {
+      "title": "PayMaster",
+      "code": "pay_master",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 21,
+    "fields": {
+      "title": "Global Pay UZ",
+      "code": "global_pay_uz",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 22,
+    "fields": {
+      "title": "iPay88",
+      "code": "ipay88",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 23,
+    "fields": {
+      "title": "Alifnasiya",
+      "code": "alifnasiya",
+      "type": "instalment",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 24,
+    "fields": {
+      "title": "Freedom Pay",
+      "code": "freedom_pay",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 25,
+    "fields": {
+      "title": "Payme (Merchant API)",
+      "code": "payme_web",
+      "type": "web",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 26,
+    "fields": {
+      "title": "Click (Shop API)",
+      "code": "click_web",
+      "type": "web",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 27,
+    "fields": {
+      "title": "PSB",
+      "code": "PSB",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 28,
+    "fields": {
+      "title": "Paybox",
+      "code": "Paybox",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 29,
+    "fields": {
+      "title": "Bill Line",
+      "code": "Bill Line",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 30,
+    "fields": {
+      "title": "Chapa",
+      "code": "Chapa",
+      "type": "telegram",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 31,
+    "fields": {
+      "title": "Card to card transfer",
+      "code": "card_to_card",
+      "type": "inplace",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 32,
+    "fields": {
+      "title": "Payfast",
+      "code": "payfast",
+      "type": "web",
+      "description": "",
+      "service_type": "payment"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 33,
+    "fields": {
+      "title": "Minimum order price",
+      "code": "minimum_order_price",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 34,
+    "fields": {
+      "title": "Delivery",
+      "code": "delivery",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 35,
+    "fields": {
+      "title": "Dynamic delivery",
+      "code": "dynamic_delivery",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 36,
+    "fields": {
+      "title": "Fixed delivery",
+      "code": "fixed_delivery",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 37,
+    "fields": {
+      "title": "Free delivery",
+      "code": "free_delivery",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 38,
+    "fields": {
+      "title": "Online delivery",
+      "code": "online_delivery",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  },
+  {
+    "model": "orders.Service",
+    "pk": 39,
+    "fields": {
+      "title": "Pick Up",
+      "code": "pickup",
+      "type": "internal",
+      "description": "",
+      "service_type": "delivery"
+    }
+  }
+]

@@ -89,12 +89,15 @@ class TemplateColor(Model):  # ✅
 
 
 class TelegramChannel(Model):  # ✅
-    chat = CharField(max_length=255, unique=True, verbose_name='Telegram kanal username')
+    chat = CharField(max_length=255, verbose_name='Telegram kanal username')
     shop = ForeignKey('shops.Shop', CASCADE, related_name='channels')
 
     class Meta:
         verbose_name = 'Telegram kanal'
         verbose_name_plural = 'Telegram kanallar'
+        unique_together = [
+            ('shop', 'chat')
+        ]
 
     def __str__(self):
         return f"{self.chat}"
@@ -112,12 +115,12 @@ class ChannelMessage(Model):  # ✅
         NOT_SENT = 'not_sent', 'Not sent'
 
     message = CharField(max_length=4100)
-    chat = ForeignKey('shops.TelegramChannel', CASCADE)
+    chat = ForeignKey('shops.TelegramChannel', CASCADE, related_name='messages')
     is_scheduled = BooleanField(default=False)
     scheduled_time = DateTimeField(blank=True, null=True, verbose_name="Keyinroq jo'natish vaqti")
     file_type = CharField(max_length=20, choices=FileType.choices, db_default=FileType.TEXT)
-    status = CharField(max_length=20, choices=MessageStatus.choices, db_default=MessageStatus.PENDING,
-                       verbose_name='Xabarning statusi')
+    status = CharField('Xabarning statusi', max_length=20, choices=MessageStatus.choices,
+                       db_default=MessageStatus.PENDING)
     created_at = DateTimeField(auto_now_add=True, verbose_name='Xabar yaratilgan vaqti')
 
     class Meta:
@@ -125,7 +128,22 @@ class ChannelMessage(Model):  # ✅
         verbose_name_plural = 'Telegram kanal xabarlari'
 
     def __str__(self):
-        return f"{self.id}. Message of {self.chat.c}"
+        return f"{self.id}. Message of {self.chat}"
+
+
+class ChatMessage(Model):  # ✅
+    class Type(TextChoices):
+        USER = 'user', 'User'
+        OWNER = 'owner', 'Owner'
+
+    class ContentType(TextChoices):
+        TEXT = 'text', 'Text'
+
+    message = CharField('Xabar', max_length=4100)
+    chat_user = ForeignKey('users.ShopUser', CASCADE, related_name='messages')
+    content_type = CharField(max_length=10, choices=Type.choices)
+    seen = BooleanField(db_default=False)
+    created_at = DateTimeField(auto_now_add=True, verbose_name='Yaratilgan sana')
 
 
 class BroadCastMessage(Model):  # ✅
@@ -141,8 +159,8 @@ class BroadCastMessage(Model):  # ✅
     lon = FloatField(blank=True, null=True, verbose_name="Lokatsiya lon")
     scheduled_time = DateTimeField(blank=True, null=True, verbose_name="Keyinroq jo'natish vaqti")
     received_users = IntegerField(default=0, verbose_name='Qabul qiluvchilar soni')
-    status = CharField(max_length=20, choices=MessageStatus.choices, db_default=MessageStatus.PENDING,
-                       verbose_name='Xabarning statusi')
+    status = CharField('Xabarning statusi', max_length=20, choices=MessageStatus.choices,
+                       db_default=MessageStatus.PENDING)
     created_at = DateTimeField(auto_now_add=True, verbose_name='Yaratilgan sana')
 
     class Meta:

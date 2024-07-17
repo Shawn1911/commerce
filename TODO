@@ -11,9 +11,8 @@ fixtures
 
 ------------------------------------------------------------------------
 
-User, ContentType, Plan, Order
+Order, Plan, User, ContentType
 
-boshqa shopdagi promocode otamidimi yoqmi
 
 
 
@@ -25,5 +24,14 @@ https://api.botcommerce.io/api/v1/shop/countries/delivery_service
 bir hil country larni qaytarebdi
 
 2.
+
+
+
+
+https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram/615860?page=1&pageSize=5
+https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram?page=2&size=10&sort=null&search=
+https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram/615860?page=1&pageSize=5
+https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram-channel/615860?page=1&pageSize=5
+
 
 
