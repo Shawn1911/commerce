@@ -11,7 +11,7 @@ fixtures
 
 ------------------------------------------------------------------------
 
-Order, Plan, User, ContentType
+Order, Plan, User
 
 
 
@@ -34,4 +34,9 @@ https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram/615860?page=1&pa
 https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram-channel/615860?page=1&pageSize=5
 
 
+
+
+resources
+https://aliev.me/prosto-o-django-content-types-framework/
+https://medium.com/@africandjangonaut/django-contenttype-and-generic-relations-d007b1be04be
 

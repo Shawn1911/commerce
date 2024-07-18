@@ -1,7 +1,9 @@
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.db.models import Model, CharField, ForeignKey, CASCADE, TextField, TextChoices, IntegerField, BooleanField, \
     JSONField, DateTimeField, PositiveIntegerField, ManyToManyField, SET_NULL, FloatField, BigIntegerField, \
     DecimalField, RESTRICT
-from shared import CreatedBaseModel
+
+from shared.django.models import CreatedBaseModel
 
 
 class Order(Model): # ?
@@ -22,9 +24,9 @@ class Order(Model): # ?
         DELIVERY = 'delivery', 'Delivery'
         PICKUP = 'pickup', 'Pickup'
 
-    delivery_price = DecimalField('Yetkazib berish narxi', null=True, blank=True)
-    user = ForeignKey('users.ShopUser', SET_NULL, null=True, blank=True, verbose_name='Teligram chat id')
-    payment = ForeignKey('orders.ShopService', SET_NULL, related_name='orders', verbose_name='Tulov turi')
+    delivery_price = DecimalField('Yetkazib berish narxi', null=True, blank=True, decimal_places=2, max_digits=15)
+    # user = ForeignKey('users.ShopUser', SET_NULL, null=True, blank=True, verbose_name='Teligram chat id')
+    payment = ForeignKey('orders.ShopService', SET_NULL, null=True, blank=True,  related_name='orders', verbose_name='Tulov turi')
     status = CharField('Order Statusi', max_length=20, choices=Status.choices)
     paid = BooleanField("To'lov qilingan yoki yo'qligi", db_default=False)
 
@@ -41,11 +43,11 @@ class Order(Model): # ?
     lon = FloatField(null=True, blank=True)
     lat = FloatField(null=True, blank=True)
     entrance = CharField('Kirish joyi', max_length=50, null=True, blank=True)
-    door_phone = CharField(max_length=50, null=True, blank=True)
+    door_phone = CharField('eshik telfon raqami', max_length=50, null=True, blank=True)
     floor_number = IntegerField('Qavat raqami', null=True, blank=True)
     apartment_number = IntegerField('kvartera raqami', null=True, blank=True)
 
-    first_name = CharField('Haridorni ismi ', max_length=50)  # register qilgan paytdagi ismni oladi
+    first_name = CharField('Haridorni ismi', max_length=50)  # register qilgan paytdagi ismni oladi
     last_name = CharField('Haridorni familiyasi', max_length=50)  # register qilgan paytdagi familiyani oladi
     phone = CharField('Haridorni telfon raqami ', max_length=50)  # kiritsh majburiy
     created_at = DateTimeField('Buyurtma yaratilgan vaqti', auto_now_add=True)
@@ -119,6 +121,7 @@ class Service(Model):  # ✅
     code = CharField(max_length=255)
     type = CharField(max_length=255, choices=Type.choices)
     description = TextField(null=True, blank=True)
+    # attachments = GenericRelation('shops.Attachment', blank=True)
 
     class Meta:
         unique_together = [
@@ -127,8 +130,8 @@ class Service(Model):  # ✅
 
 
 class ShopServiceField(Model):  # ✅
-    shop_service = ForeignKey('shops.ShopService', CASCADE)
-    field = ForeignKey('shops.Field', CASCADE)
+    shop_service = ForeignKey('orders.ShopService', CASCADE)
+    field = ForeignKey('orders.Field', CASCADE)
     value = JSONField(default=dict)
 
 
@@ -149,3 +152,4 @@ class Field(Model):  # ✅
     required = BooleanField()
     type = CharField(max_length=255, choices=Type.choices)
     provider_labels = JSONField(null=True, blank=True)
+

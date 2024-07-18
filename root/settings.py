@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.join(BASE_DIR, 'apps'))
 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -25,12 +25,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "users.apps.UsersConfig",
-    "orders",
+
+    # custom packages
     "shared",
+    "orders",
     "shops",
     "users"
 
+    # Third Party packages
 
 ]
 
@@ -63,6 +65,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "root.wsgi.application"
+AUTH_USER_MODEL = "users.User"
 
 DATABASES = {
     "default": {
