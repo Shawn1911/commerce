@@ -44,7 +44,7 @@ https://medium.com/@africandjangonaut/django-contenttype-and-generic-relations-d
 TASK
 1. fixture larni yozish
 2. isort, flake8
-3.
+3. celery
 
 
 Libs
@@ -52,4 +52,5 @@ drf-spectacular
 djangorestframework
 django-filter
 django-ckeditor-5
-
+python-dotenv
+psycopg2-binary
