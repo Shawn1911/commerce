@@ -42,9 +42,13 @@ https://medium.com/@africandjangonaut/django-contenttype-and-generic-relations-d
 
 
 TASK
-1. fixture larni yozish
-2. isort, flake8
-3. celery
+1. register, login api + drf-spectacular
+2. fixture larni yozish
+3. isort, flake8
+4. celery + verification
+5. create shop api
+6.
+
 
 
 Libs
@@ -54,3 +58,8 @@ django-filter
 django-ckeditor-5
 python-dotenv
 psycopg2-binary
+
+
+
+boshqa kutubxonalar
+https://github.com/ui/django-post_office
