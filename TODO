@@ -7,13 +7,9 @@ apps
 
 
 fixtures
-    - country, currency, shop-category, language, services, fields, plan
+    - country, currency, shop-category, language, services, fields, plan, quotas
 
 ------------------------------------------------------------------------
-
-Order, Plan, User
-
-
 
 
 
@@ -24,6 +20,9 @@ https://api.botcommerce.io/api/v1/shop/countries/delivery_service
 bir hil country larni qaytarebdi
 
 2.
+
+
+
 
 
 
@@ -39,4 +38,18 @@ https://api.botcommerce.io/api/v1/shop/shop/17186/chat/telegram-channel/615860?p
 resources
 https://aliev.me/prosto-o-django-content-types-framework/
 https://medium.com/@africandjangonaut/django-contenttype-and-generic-relations-d007b1be04be
+
+
+
+TASK
+1. fixture larni yozish
+2. isort, flake8
+3.
+
+
+Libs
+drf-spectacular
+djangorestframework
+django-filter
+django-ckeditor-5
 

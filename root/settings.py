@@ -30,9 +30,11 @@ INSTALLED_APPS = [
     "shared",
     "orders",
     "shops",
-    "users"
+    "users",
 
     # Third Party packages
+    'rest_framework',
+    'drf_spectacular',
 
 ]
 

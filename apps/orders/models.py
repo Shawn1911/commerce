@@ -1,12 +1,11 @@
-from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.fields import GenericRelation
 from django.db.models import Model, CharField, ForeignKey, CASCADE, TextField, TextChoices, IntegerField, BooleanField, \
-    JSONField, DateTimeField, PositiveIntegerField, ManyToManyField, SET_NULL, FloatField, BigIntegerField, \
-    DecimalField, RESTRICT
+    JSONField, DateTimeField, PositiveIntegerField, ManyToManyField, SET_NULL, FloatField, DecimalField, RESTRICT
 
 from shared.django.models import CreatedBaseModel
 
 
-class Order(Model): # ?
+class Order(Model):  # ✅
     class Status(TextChoices):
         IN_PROCESSING = 'in_processing', 'In Process'
         CANCELLED = 'cancelled', 'Cancelled'
@@ -26,7 +25,7 @@ class Order(Model): # ?
 
     delivery_price = DecimalField('Yetkazib berish narxi', null=True, blank=True, decimal_places=2, max_digits=15)
     # user = ForeignKey('users.ShopUser', SET_NULL, null=True, blank=True, verbose_name='Teligram chat id')
-    payment = ForeignKey('orders.ShopService', SET_NULL, null=True, blank=True,  related_name='orders', verbose_name='Tulov turi')
+    payment = ForeignKey('orders.ShopService', SET_NULL, null=True, blank=True, related_name='orders')
     status = CharField('Order Statusi', max_length=20, choices=Status.choices)
     paid = BooleanField("To'lov qilingan yoki yo'qligi", db_default=False)
 
@@ -39,7 +38,7 @@ class Order(Model): # ?
     is_archived = BooleanField('Arxivlangan buyurtmalar', db_default=False)
     yandex_taxi_link = CharField(max_length=255, null=True, blank=True)
     currency = ForeignKey('shops.Currency', RESTRICT, related_name='orders')
-    address = CharField(max_length=255, null=True, blank=True)
+    address = CharField('Manzil', max_length=255, null=True, blank=True)
     lon = FloatField(null=True, blank=True)
     lat = FloatField(null=True, blank=True)
     entrance = CharField('Kirish joyi', max_length=50, null=True, blank=True)
@@ -53,19 +52,11 @@ class Order(Model): # ?
     created_at = DateTimeField('Buyurtma yaratilgan vaqti', auto_now_add=True)
 
 
-class OrderItem(Model):
+class OrderItem(Model):  # ✅
     order = ForeignKey('orders.Order', CASCADE, related_name='items')
-    count = PositiveIntegerField(db_default=1)
-
-    # items" [ TODO items nima ?
-    #     {
-    #         "price": 1600.0,
-    #         "count": 1.0,
-    #         "id": 95994,
-    #         "product_name": "16GB, 512GB SSD MacBook Pro 14",
-    #         "attachments": []
-    #     }
-    # ]
+    count = PositiveIntegerField('Soni', db_default=1)
+    currency = ForeignKey('shops.Currency', RESTRICT)
+    product_attribute = ForeignKey('shops.AttributeVariant', CASCADE, related_name='order_items')
 
 
 class PromoCode(CreatedBaseModel):  # ✅
@@ -73,13 +64,13 @@ class PromoCode(CreatedBaseModel):  # ✅
         FREE_DELIVERY = 'free_delivery', 'Free delivery'
         DISCOUNT = 'discount', 'Discount'
 
-    active = BooleanField(default=True)
-    code = CharField(max_length=255)
-    start_date = DateTimeField()
-    end_date = DateTimeField()
-    limit = IntegerField()
-    remaining_quantity = IntegerField()
-    type = CharField(max_length=255, choices=Type.choices, default=Type.FREE_DELIVERY)
+    active = BooleanField('Faolligi', default=True)
+    code = CharField('Promokod', max_length=255)
+    start_date = DateTimeField(verbose_name='Amal qilish muddati(boshi)')
+    end_date = DateTimeField(verbose_name='Amal qilish muddati(oxiri)')
+    limit = IntegerField(verbose_name='Soni')
+    remaining_quantity = IntegerField(verbose_name='Qolgan miqdor')
+    type = CharField('Tur', max_length=255, choices=Type.choices, default=Type.FREE_DELIVERY)
     percent = IntegerField(db_default=0)
     used_quantity = PositiveIntegerField()
     shop = ForeignKey('shops.Shop', CASCADE, related_name='promo_codes')
@@ -117,11 +108,11 @@ class Service(Model):  # ✅
         INSTALMENT = 'instalment', 'Instalment'
 
     service_type = CharField(max_length=15, choices=ServiceType.choices)
-    title = CharField(max_length=255)
+    title = CharField('Sarlavha', max_length=255)
     code = CharField(max_length=255)
     type = CharField(max_length=255, choices=Type.choices)
-    description = TextField(null=True, blank=True)
-    # attachments = GenericRelation('shops.Attachment', blank=True)
+    description = TextField('tavsifi',null=True, blank=True)
+    attachments = GenericRelation('shops.Attachment', blank=True)
 
     class Meta:
         unique_together = [
@@ -152,4 +143,3 @@ class Field(Model):  # ✅
     required = BooleanField()
     type = CharField(max_length=255, choices=Type.choices)
     provider_labels = JSONField(null=True, blank=True)
-
