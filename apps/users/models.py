@@ -56,24 +56,25 @@ class User(AbstractBaseUser, PermissionsMixin):  # ✅
         FACEBOOK = 'facebook', 'Facebook'
 
     type = CharField(max_length=25)
-    username = CharField('Foydalanuvchi nomi',max_length=150, unique=True, validators=[UnicodeUsernameValidator()])
-    first_name = CharField('Ism',max_length=150, blank=True)
-    last_name = CharField('Familiya',max_length=150, blank=True)
-    email = EmailField('Eamil',blank=True)
+    username = CharField('Foydalanuvchi nomi', max_length=150, null=True, blank=True, unique=True,
+                         validators=[UnicodeUsernameValidator()])
+    first_name = CharField('Ism', max_length=150, blank=True)
+    last_name = CharField('Familiya', max_length=150, blank=True)
+    email = EmailField('Eamil', unique=True)
     is_staff = BooleanField(default=False)
     is_active = BooleanField(default=False)
 
     language = ForeignKey('shops.Language', CASCADE)
-    public_offer = BooleanField('Ommaviy taklif',default=False)
-    invitation_code = CharField('Taflifnoma kodi',max_length=25, unique=True, null=True)
+    public_offer = BooleanField('Ommaviy taklif', default=False)
+    invitation_code = CharField('Taflifnoma kodi', max_length=25, unique=True, null=True)
     created_at = DateTimeField(auto_now=True)
     default_shop = OneToOneField('shops.Shop', SET_NULL, blank=True, null=True)
 
     objects = UserManager()
 
     EMAIL_FIELD = "email"
-    USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email"]
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
 
 
 class Plan(CreatedBaseModel):  # ✅
@@ -117,8 +118,8 @@ class PlanInvoice(CreatedBaseModel):  # ✅
     price = CharField('Narxi', max_length=55)
     user = ForeignKey('users.User', CASCADE, related_name='plan_invoices')
     plan = ForeignKey('users.Plan', CASCADE)
-    payed_at = DateTimeField('da toʻlangan',null=True, blank=True)
-    pay_url = URLField('tolov url',null=True, blank=True)
+    payed_at = DateTimeField('da toʻlangan', null=True, blank=True)
+    pay_url = URLField('tolov url', null=True, blank=True)
     plan_extended_from = DateField()
     plan_extended_until = DateField(null=True, blank=True)
     status = CharField(max_length=25, choices=Status.choices, db_default=Status.NEW)
