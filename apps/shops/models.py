@@ -1,8 +1,11 @@
-from django.contrib.contenttypes.fields import GenericRelation, GenericForeignKey
-from django.db.models import Model, CharField, ForeignKey, CASCADE, TextField, TextChoices, ManyToManyField, \
-    IntegerField, FloatField, BooleanField, DateTimeField, OneToOneField, URLField, PositiveSmallIntegerField, \
-    TimeField, DecimalField, CheckConstraint, Q, F, PositiveIntegerField
-
+from django.contrib.contenttypes.fields import (GenericForeignKey,
+                                                GenericRelation,)
+from django.db.models import (CASCADE, BooleanField, CharField,
+                              CheckConstraint, DateTimeField, DecimalField, F,
+                              FloatField, ForeignKey, IntegerField,
+                              ManyToManyField, Model, OneToOneField,
+                              PositiveIntegerField, PositiveSmallIntegerField,
+                              Q, TextChoices, TextField, TimeField, URLField,)
 from shared.django.models import CreatedBaseModel
 
 
@@ -231,7 +234,7 @@ class Product(Model):  # ✅
     name = CharField('Mahsulot nomi', max_length=100)
     category = ForeignKey('shops.Category', CASCADE, related_name='products')
     price = DecimalField('Sotuv narxi', max_digits=15, decimal_places=2)
-    full_price = DecimalField('Umumiy narxi', max_digits=15, decimal_places=2)
+    full_price = DecimalField('Umumiy narxi', max_digits=15, decimal_places=2, null=True, blank=True)
     description = TextField()
     has_available = BooleanField('Mahsulotni o`chirish va yoqish', default=True)
     weight = IntegerField('Vazni', null=True, blank=True)
@@ -242,15 +245,15 @@ class Product(Model):  # ✅
     ikpu_code = IntegerField('IKPU ko`di', null=True, blank=True)
     package_code = IntegerField('qadoq ko`di', null=True, blank=True)
     stock_status = CharField(max_length=100, choices=StockStatus.choices)
-    quantity = IntegerField('mahsulot soni status indefinite bo`lganda chiqadi', db_default=0)
+    quantity = IntegerField('mahsulot soni status indefinite bo`lganda chiqadi', db_default=0, null=True, blank=True)
     barcode = IntegerField('Barkod', null=True, blank=True)
-    vat_percent = IntegerField('QQS foizi', db_default=0)
+    vat_percent = IntegerField('QQS foizi', null=True, blank=True)
     position = IntegerField('sort order', db_default=1)
     internal_notes = TextField(null=True, blank=True)
     unit = CharField(max_length=20, choices=Unit.choices)
-    weight_class = ForeignKey('shops.Weight', CASCADE, related_name='weights')
-    length_class = ForeignKey('shops.Length', CASCADE, related_name='lengths')
-    attachments = GenericRelation('shops.Attachment', blank=True)
+    weight_class = ForeignKey('shops.Weight', CASCADE, related_name='weights', null=True, blank=True)
+    length_class = ForeignKey('shops.Length', CASCADE, related_name='lengths', null=True, blank=True)
+    attachments = GenericRelation('shops.Attachment', object_id_field='record_id', blank=True)
 
     class Meta:
         constraints = [

@@ -1,0 +1,46 @@
+[
+  {
+    "model": "users.plan",
+    "pk": 1,
+    "fields": {
+      "code": "free",
+      "name": "Free",
+      "description": "Free",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.plan",
+    "pk": 2,
+    "fields": {
+      "code": "basic",
+      "name": "Basic",
+      "description": "Basic",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.plan",
+    "pk": 3,
+    "fields": {
+      "code": "standard",
+      "name": "Standard",
+      "description": "Standard",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.plan",
+    "pk": 4,
+    "fields": {
+      "code": "premium",
+      "name": "Premium",
+      "description": "Premium",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  }
+]

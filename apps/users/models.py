@@ -1,10 +1,15 @@
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
+from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin,
+                                        UserManager, )
 from django.contrib.auth.validators import UnicodeUsernameValidator
-from django.db.models import CharField, ForeignKey, CASCADE, TextField, IntegerField, BooleanField, \
-    DateTimeField, OneToOneField, EmailField, SET_NULL, BigIntegerField, TextChoices, RESTRICT, Model, \
-    PositiveIntegerField, ManyToManyField, URLField, DateField
+from django.db.models import (CASCADE, RESTRICT, SET_NULL, BigIntegerField,
+                              BooleanField, CharField, DateField,
+                              DateTimeField, EmailField, ForeignKey,
+                              IntegerField, ManyToManyField, Model,
+                              OneToOneField, PositiveIntegerField, TextChoices,
+                              TextField, URLField, )
 
 from shared.django.models import CreatedBaseModel
+from users.managers import CustomUserManager
 
 
 class Person(Model):  # ✅
@@ -60,17 +65,17 @@ class User(AbstractBaseUser, PermissionsMixin):  # ✅
                          validators=[UnicodeUsernameValidator()])
     first_name = CharField('Ism', max_length=150, blank=True)
     last_name = CharField('Familiya', max_length=150, blank=True)
-    email = EmailField('Eamil', unique=True)
+    email = EmailField('Email', unique=True)
     is_staff = BooleanField(default=False)
     is_active = BooleanField(default=False)
 
-    language = ForeignKey('shops.Language', CASCADE)
+    language = ForeignKey('shops.Language', CASCADE, blank=True, null=True)
     public_offer = BooleanField('Ommaviy taklif', default=False)
     invitation_code = CharField('Taflifnoma kodi', max_length=25, unique=True, null=True)
     created_at = DateTimeField(auto_now=True)
     default_shop = OneToOneField('shops.Shop', SET_NULL, blank=True, null=True)
 
-    objects = UserManager()
+    objects = CustomUserManager()
 
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"

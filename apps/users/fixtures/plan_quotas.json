@@ -1,0 +1,511 @@
+[
+  {
+    "model": "users.planquotas",
+    "pk": 1,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 1
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 2,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 2
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 3,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 3
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 4,
+    "fields": {
+      "value": "2",
+      "plan_id": 1,
+      "quotas_id": 4
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 5,
+    "fields": {
+      "value": "4",
+      "plan_id": 1,
+      "quotas_id": 5
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 6,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 6
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 7,
+    "fields": {
+      "value": "20",
+      "plan_id": 1,
+      "quotas_id": 7
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 8,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 8
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 9,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 9
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 10,
+    "fields": {
+      "value": "+",
+      "plan_id": 1,
+      "quotas_id": 10
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 11,
+    "fields": {
+      "value": "-",
+      "plan_id": 1,
+      "quotas_id": 11
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 12,
+    "fields": {
+      "value": "OpenStreeMap",
+      "plan_id": 1,
+      "quotas_id": 12
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 13,
+    "fields": {
+      "value": "0",
+      "plan_id": 1,
+      "quotas_id": 13
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 14,
+    "fields": {
+      "value": "-",
+      "plan_id": 1,
+      "quotas_id": 14
+    }
+  },
+
+
+  {
+    "model": "users.planquotas",
+    "pk": 15,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 1
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 16,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 2
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 17,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 3
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 18,
+    "fields": {
+      "value": "100",
+      "plan_id": 2,
+      "quotas_id": 4
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 19,
+    "fields": {
+      "value": "1000",
+      "plan_id": 2,
+      "quotas_id": 5
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 20,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 6
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 21,
+    "fields": {
+      "value": "5000",
+      "plan_id": 2,
+      "quotas_id": 7
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 22,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 8
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 23,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 9
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 24,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 10
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 25,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 11
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 26,
+    "fields": {
+      "value": "Google Maps",
+      "plan_id": 2,
+      "quotas_id": 12
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 27,
+    "fields": {
+      "value": "1",
+      "plan_id": 2,
+      "quotas_id": 13
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 28,
+    "fields": {
+      "value": "+",
+      "plan_id": 2,
+      "quotas_id": 14
+    }
+  },
+
+
+
+  {
+    "model": "users.planquotas",
+    "pk": 29,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 1
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 30,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 2
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 31,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 3
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 32,
+    "fields": {
+      "value": "2500",
+      "plan_id": 3,
+      "quotas_id": 4
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 33,
+    "fields": {
+      "value": "10000",
+      "plan_id": 3,
+      "quotas_id": 5
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 34,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 6
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 35,
+    "fields": {
+      "value": "Cheklanmagan",
+      "plan_id": 3,
+      "quotas_id": 7
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 36,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 8
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 37,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 9
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 38,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 10
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 39,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 11
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 40,
+    "fields": {
+      "value": "Google Maps",
+      "plan_id": 3,
+      "quotas_id": 12
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 41,
+    "fields": {
+      "value": "5",
+      "plan_id": 3,
+      "quotas_id": 13
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 42,
+    "fields": {
+      "value": "+",
+      "plan_id": 3,
+      "quotas_id": 14
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 43,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 1
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 44,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 2
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 45,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 3
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 46,
+    "fields": {
+      "value": "Cheklanmagan",
+      "plan_id": 4,
+      "quotas_id": 4
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 47,
+    "fields": {
+      "value": "Cheklanmagan",
+      "plan_id": 4,
+      "quotas_id": 5
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 48,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 6
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 49,
+    "fields": {
+      "value": "Cheklanmagan",
+      "plan_id": 4,
+      "quotas_id": 7
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 50,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 8
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 51,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 9
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 52,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 10
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 53,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 11
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 54,
+    "fields": {
+      "value": "Google Maps",
+      "plan_id": 4,
+      "quotas_id": 12
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 55,
+    "fields": {
+      "value": "10",
+      "plan_id": 4,
+      "quotas_id": 13
+    }
+  },
+  {
+    "model": "users.planquotas",
+    "pk": 56,
+    "fields": {
+      "value": "+",
+      "plan_id": 4,
+      "quotas_id": 14
+    }
+  }
+]

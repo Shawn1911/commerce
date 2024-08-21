@@ -1,7 +1,9 @@
 from django.contrib.contenttypes.fields import GenericRelation
-from django.db.models import Model, CharField, ForeignKey, CASCADE, TextField, TextChoices, IntegerField, BooleanField, \
-    JSONField, DateTimeField, PositiveIntegerField, ManyToManyField, SET_NULL, FloatField, DecimalField, RESTRICT
-
+from django.db.models import (CASCADE, RESTRICT, SET_NULL, BooleanField,
+                              CharField, DateTimeField, DecimalField,
+                              FloatField, ForeignKey, IntegerField, JSONField,
+                              ManyToManyField, Model, PositiveIntegerField,
+                              TextChoices, TextField,)
 from shared.django.models import CreatedBaseModel
 
 
@@ -111,7 +113,7 @@ class Service(Model):  # ✅
     title = CharField('Sarlavha', max_length=255)
     code = CharField(max_length=255)
     type = CharField(max_length=255, choices=Type.choices)
-    description = TextField('tavsifi',null=True, blank=True)
+    description = TextField('tavsifi', null=True, blank=True)
     attachments = GenericRelation('shops.Attachment', blank=True)
 
     class Meta:

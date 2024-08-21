@@ -1,0 +1,142 @@
+[
+  {
+    "model": "users.quotas",
+    "pk": 1,
+    "fields": {
+      "name": "Telegram do‘koni",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 2,
+    "fields": {
+      "name": "WhatsApp do‘koni",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 3,
+    "fields": {
+      "name": "Veb-do‘kon",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 4,
+    "fields": {
+      "name": "Kategoriyalar",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 5,
+    "fields": {
+      "name": "Mahsulotlar",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 6,
+    "fields": {
+      "name": "Analitika",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 7,
+    "fields": {
+      "name": "Buyurtmalar",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 8,
+    "fields": {
+      "name": "Administrator paneli",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 9,
+    "fields": {
+      "name": "To‘lov xizmatlari",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 10,
+    "fields": {
+      "name": "Etkazib berish xizmatlari",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 11,
+    "fields": {
+      "name": "Mijozlarni qo‘llab-quvvatlash",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 12,
+    "fields": {
+      "name": "Yetkazib berish masofasini aniqlash uchun xarita",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 13,
+    "fields": {
+      "name": "Qo‘shimcha xodimlar akkauntlari",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.quotas",
+    "pk": 14,
+    "fields": {
+      "name": "Veb-do'kon shaxsiy domeni",
+      "description": "",
+      "created_at": "2024-07-27T00:00:00Z",
+      "updated_at": "2024-07-27T00:00:00Z"
+    }
+  }
+]

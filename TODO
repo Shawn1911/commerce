@@ -42,14 +42,43 @@ https://medium.com/@africandjangonaut/django-contenttype-and-generic-relations-d
 
 
 TASK
-1. register, login api + drf-spectacular
-2. fixture larni yozish
-3. isort, flake8
-4. celery + verification
-5. create shop api
-6.
+1. register, login api + drf-spectacular ✅
+2. fixture larni yozish ✅
+3. isort, flake8 ✅
+5. create shop api ✅
+4. celery + verification ❌
 
 
+
+07.22.2024 tasks
+0. oauth2 4tani qilish✅
+1. country, currency, shop-category✅
+3. swagger Authorize ishlashi kk✅
+4. pytest drf ✅
+5. django faker ✅
+2. alohida adminka userlar uchun (is_staff true qilish kk) ❌
+
+07.30.2024
+fixtures
+    - country, currency, shop-category, language, services, fields, plan, quotas ✅
+
+TASK
+1. register, login api + drf-spectacular ✅
+2. fixture larni yozish ✅
+3. isort, flake8 ✅
+5. django command yaratish, faker bilan (user,shop,category,product) ntadan✅
+6. CRUD shop (pagination va filterni ham etiborga olish) ✅
+7. CRUD category (pagination va filterni ham etiborga olish) ✅
+4. celery + verification (language bilan accept-language qarash kk headers da),
+                                (pochtaga boradigan shablon bir hil bolishi kk) ❌
+
+08.01.2024
+
+TASK
+1. correct wrong APIs ✅
+2. add (send email, reset password) use celery and log out APIs
+3. Separate admin page for staff users
+4. Test, Pytest.
 
 Libs
 drf-spectacular

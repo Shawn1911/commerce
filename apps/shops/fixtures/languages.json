@@ -3,36 +3,36 @@
     "model": "shops.language",
     "pk": 1,
     "fields": {
-      "icon": "🇺🇿",
       "title": "O'zbekcha",
-      "code": "uz"
+      "code": "uz",
+      "icon": "🇺🇿"
     }
   },
   {
     "model": "shops.language",
     "pk": 2,
     "fields": {
-      "icon": "🇷🇺",
       "title": "Русский",
-      "code": "ru"
+      "code": "ru",
+      "icon": "🇷🇺"
     }
   },
   {
     "model": "shops.language",
     "pk": 3,
     "fields": {
-      "icon": "🇺🇸",
       "title": "English",
-      "code": "en"
+      "code": "en",
+      "icon": "🇺🇸"
     }
   },
   {
     "model": "shops.language",
     "pk": 4,
     "fields": {
-      "icon": "🇹🇯",
       "title": "Tоҷикӣ",
-      "code": "tg"
+      "code": "tg",
+      "icon": "🇹🇯"
     }
   }
 ]
