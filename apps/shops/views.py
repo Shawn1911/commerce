@@ -1,14 +1,15 @@
 from django.core.exceptions import ValidationError
 from django_filters.rest_framework import DjangoFilterBackend
-from drf_spectacular.utils import extend_schema, extend_schema_view
+from drf_spectacular.utils import extend_schema
 from rest_framework.generics import (ListCreateAPIView,
-                                     RetrieveUpdateDestroyAPIView,)
+                                     RetrieveUpdateDestroyAPIView, )
 from rest_framework.permissions import IsAuthenticated
-from shops.models import Category, Shop
+
+from shops.models import Category, Shop, ShopCategory
 from shops.permissions import IsOwnerOfShop, IsOwnerOfShopCategory
 from shops.serializers import (CategoryDetailModelSerializer,
                                CategoryModelSerializer,
-                               ShopDetailModelSerializer, ShopModelSerializer,)
+                               ShopDetailModelSerializer, ShopModelSerializer, )
 
 
 @extend_schema(tags=['Shop'])
@@ -18,14 +19,6 @@ class ShopListCreateAPIView(ListCreateAPIView):
     permission_classes = [IsAuthenticated, IsOwnerOfShop]
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = []
-
-    # def get_queryset(self):
-    #     if getattr(self, "swagger_fake_view", False):
-    #         return Shop.objects.none()
-    #     return Shop.objects.filter(owner=self.request.user)
-    #
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
 
 
 @extend_schema(tags=['Category'])
@@ -37,7 +30,7 @@ class CategoryListCreateAPIView(ListCreateAPIView):
 
     def get_queryset(self):
         if getattr(self, "swagger_fake_view", False):
-            return Category.objects.none()
+            return ShopCategory.objects.none()
         return Category.objects.filter(shop__owner=self.request.user)
 
     def perform_create(self, serializer):

@@ -80,6 +80,10 @@ TASK
 3. Separate admin page for staff users
 4. Test, Pytest.
 
+TASK
+1 Shop  category in english
+2. Test
+
 Libs
 drf-spectacular
 djangorestframework
