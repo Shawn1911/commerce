@@ -3,7 +3,7 @@
     "model": "shops.ShopCategory",
     "pk": 1,
     "fields": {
-         "name": "Kiyim"
+         "name": "Clothing"
     }
 
   },
@@ -11,35 +11,35 @@
     "model": "shops.ShopCategory",
     "pk": 2,
     "fields": {
-      "name": "Maishiy texnikalar"
+      "name": "Appliances"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 3,
     "fields": {
-      "name": "Ish yuritish buyumlari"
+      "name": "Stationery"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 4,
     "fields": {
-      "name": "Boshqalar"
+      "name": "Other"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 5,
     "fields": {
-      "name": "Oziq-ovqatlar va Ichimliklar"
+      "name": "Food and Drink"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 6,
     "fields": {
-      "name": "Bog' va uy hayvonlari"
+      "name": "Garden & Pets care"
     }
   },
   {
@@ -47,7 +47,7 @@
 
     "pk": 7,
     "fields": {
-      "name": "O'yinchoqlar, bolalar uchun mahsulotlar"
+      "name": "Toys, Baby Products and Crafts"
     }
   },
   {
@@ -55,14 +55,14 @@
 
     "pk": 8,
     "fields": {
-      "name": "Mebel va Uy jihozlari"
+      "name": "Sport, Fitness and Leisure"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 9,
     "fields": {
-      "name": "Sumkalar, oyoq kiyimlar va aksessuarlar"
+      "name": "Furniture and Household Goods"
     }
   },
   {
@@ -70,63 +70,63 @@
 
     "pk": 10,
     "fields": {
-      "name": "Kasmetika, salomatlik va go'zallik"
+      "name": "Apparel, Shoes and Accessories"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 11,
     "fields": {
-      "name": "Kitoblar, Filmlar, Musiqalar va O'yinlar"
+      "name": "Cosmetics, Health and Beauty"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 12,
     "fields": {
-      "name": "Elektronika va Kompyuterlar"
+      "name": "Books, Movies, Music and Games"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 13,
     "fields": {
-      "name": "Restoran va kafelar"
+      "name": "Electronics and Computers"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 14,
     "fields": {
-      "name": "Zargarlik buyumlari"
+      "name": "Restaurants and Cafés"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 15,
     "fields": {
-      "name": "San'at va fotografiya"
+      "name": "Jewellery"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 16,
     "fields": {
-      "name": "Uskunalar va uyni yaxshilash"
+      "name": "Art and Photography"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 17,
     "fields": {
-      "name": "Sovg'alar, gullar va kollektsiyalar"
+      "name": "Hardware and Home improvement"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 18,
     "fields": {
-      "name": "Ofis jihozlari"
+      "name": "Gifts, Flowers and Collectables"
     }
   },
   {
@@ -134,21 +134,21 @@
 
     "pk": 19,
     "fields": {
-      "name": "Tamaki, vape va chekish"
+      "name": "Office supplies"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 20,
     "fields": {
-      "name": "Streaming, Onlayn darslar va dasturiy ta'minot"
+      "name": "Streaming, Online classes and Software license keys"
     }
   },
   {
     "model": "shops.ShopCategory",
     "pk": 21,
     "fields": {
-      "name": "Avtomobilsozlik"
+      "name": "Automotive"
     }
   }
 ]

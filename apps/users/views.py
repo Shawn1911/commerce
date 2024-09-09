@@ -1,152 +1,147 @@
-from django.conf import settings
-from django.contrib.auth import authenticate, get_user_model
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.encoding import force_str
-from django.utils.http import urlsafe_base64_decode
+import uuid
+
+from django.contrib.auth import authenticate
+from django.core.cache import cache
+from django.template.loader import render_to_string
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from rest_framework.generics import GenericAPIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import action
+from rest_framework.exceptions import ValidationError
+from rest_framework.generics import (GenericAPIView, RetrieveAPIView,
+                                     UpdateAPIView, get_object_or_404,)
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-
+from rest_framework.views import APIView
+from rest_framework.viewsets import GenericViewSet
+from shared import translate_message, unique_code
 from users.models import User
-from users.serializers import (EmptySerializer, LoginSerializer,
-                               ResetPasswordSerializer, UserSerializer, PasswordResetConfirmSerializer, )
+from users.serializers import (AuthModelSerializer, ConfirmEmailSerializer,
+                               EnterYourEmailSerializer, LoginSerializer,
+                               LogoutSerializer, SignUpModelSerializer,
+                               UpdatePasswordSerializer,
+                               UserDefaultShopUpdateSerializer,)
 from users.tasks import send_email
-from users.tokens import account_activation_token
-
-User = get_user_model()
 
 
-class RegisterUserView(GenericAPIView):
-    serializer_class = UserSerializer
+@extend_schema(tags=['users'])
+class SingUpCreateAPIView(GenericAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = SignUpModelSerializer
 
-    @extend_schema(
-        request=UserSerializer,
-        description='Register a new user with first name, last name, email, password, and password confirmation.',
-        summary='User Registration',
-        tags=['Auth'],
-    )
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            user = serializer.save()
-
-            # Trigger the email confirmation task
-            send_email.delay(user.id, is_reset_password=False, base_url=settings.BASE_URL)
-
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class EmailConfirmationView(GenericAPIView):
-    @extend_schema(
-        description='Confirm a user’s email address by verifying the provided token.',
-        summary='Email Confirmation',
-        tags=['Auth'],
-    )
-    def get(self, request, uidb64, token):
-        try:
-            uid = force_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(pk=uid)
-        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-            return Response({'error': 'Invalid user ID.'}, status=status.HTTP_400_BAD_REQUEST)
+@extend_schema(tags=['auth'])
+class ConfirmEmailAPIView(APIView):
+    permission_classes = (AllowAny,)
+    serializer_class = ConfirmEmailSerializer
 
-        if account_activation_token.check_token(user, token):
-            # Here you can mark the user as confirmed or activated
+    def get(self, request, token):
+        serializer = self.serializer_class(data={'token': token})
+        serializer.is_valid(raise_exception=True)
+        if user := get_object_or_404(User, email=cache.get(token)):
             user.is_active = True
+            user.is_staff = True
+            user.invitation_code = unique_code()
+            user.public_offer = True
             user.save()
-            return Response({'detail': 'Email has been confirmed successfully.'}, status=status.HTTP_200_OK)
-        else:
-            return Response({'error': 'Invalid token.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "User activated successfully!"})
+        return Response({"error": "User does not exist"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UserLoginView(GenericAPIView):
+@extend_schema(tags=['auth'])
+class LoginAPIView(GenericViewSet):
+    permission_classes = [AllowAny]
     serializer_class = LoginSerializer
 
-    @extend_schema(
-        request=LoginSerializer,
-        description='Log in a user with email and password to receive an authentication token.',
-        summary='User Login',
-        tags=['Auth'],
-    )
-    def post(self, request):
-        serializer = LoginSerializer(data=request.data)
-        if serializer.is_valid():
-            email = serializer.validated_data['email']
-            password = serializer.validated_data['password']
-            user = authenticate(email=email, password=password)
+    @action(detail=False, methods=['post'])
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        password = serializer.validated_data['password']
 
-            if user:
-                token, _ = Token.objects.get_or_create(user=user)
-                return Response({'token': token.key}, status=status.HTTP_200_OK)
+        user = authenticate(email=email, password=password, is_active=True)
+        if user:
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key})
 
-            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UserLogoutView(GenericAPIView):
-    permission_classes = [IsAuthenticated]
-    serializer_class = EmptySerializer
+@extend_schema(tags=['auth'])
+class ForgotPasswordAPIView(GenericAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = EnterYourEmailSerializer
 
-    @extend_schema(
-        description='Log out the current user by deleting their authentication token.',
-        summary='User Logout',
-        tags=['Auth'],
-    )
-    def post(self, request):
-        try:
-            token = Token.objects.get(user=request.user)
-            token.delete()
-            return Response({'detail': 'Successfully logged out.'}, status=status.HTTP_200_OK)
-        except Token.DoesNotExist:
-            return Response({'error': 'Token not found.'}, status=status.HTTP_400_BAD_REQUEST)
-
-
-class ResetPasswordView(GenericAPIView):
-    serializer_class = ResetPasswordSerializer
-
-    @extend_schema(
-        request=ResetPasswordSerializer,
-        description='Request a password reset for a user by providing their email address.',
-        summary='Password Reset',
-        tags=['Auth'],
-    )
-    def post(self, request):
-        serializer = ResetPasswordSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.send_reset_email()
-            return Response({'detail': 'Password reset email sent.'}, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        token = str(uuid.uuid4())
+        language = request.header.get('language')
+        scheme = request.scheme
+        host = request.get.host()
+        context = {
+            'confirmation_url': f"{scheme}://{host}/api/v1/users/reset-password/{token}",
+            'type': 'change_password',
+            'language': language,
+            'home_url': f"{scheme}://{host}",
+        }
+        message = render_to_string(
+            template_name="link.html",
+            context=context
+        )
+        send_email.delay(email, message, translate_message(language))
+        cache.set(token, email, 300)
+        return Response({"message": "Email sent successfully!"}, status.HTTP_200_OK)
 
 
-class PasswordResetConfirmView(GenericAPIView):
-    serializer_class = PasswordResetConfirmSerializer
+@extend_schema(tags=['users'])
+class UpdatePasswordAPIView(GenericAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = UpdatePasswordSerializer
 
-    @extend_schema(
-        request=PasswordResetConfirmSerializer,
-        description='Confirm a password reset by providing the token, email, and new password.',
-        summary='Password Reset Confirmation',
-        tags=['Auth'],
-    )
-    def post(self, request, uidb64=None, token=None):
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            new_password = serializer.validated_data.get('new_password')
+    def post(self, request, token, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        if user := get_object_or_404(User, email=cache.get(token)):
+            if serializer.validated_data['password'] != serializer.validated_data['confirm_password']:
+                raise ValidationError({"password": "Password did not match."})
+            user.set_password(serializer.validated_data['password'])
+            user.save()
+            return Response({"message": "Password updated successfully!"}, status.HTTP_200_OK)
+        return Response({"error": "User does not exist"}, status.HTTP_400_BAD_REQUEST)
 
-            try:
-                uid = force_str(urlsafe_base64_decode(uidb64))
-                user = User.objects.get(pk=uid)
-            except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-                return Response({'error': 'Invalid user ID.'}, status=status.HTTP_400_BAD_REQUEST)
 
-            if default_token_generator.check_token(user, token):
-                user.set_password(new_password)
-                user.save()
-                return Response({'detail': 'Password has been reset successfully.'}, status=status.HTTP_200_OK)
-            else:
-                return Response({'error': 'Invalid token.'}, status=status.HTTP_400_BAD_REQUEST)
+@extend_schema(tags=['users'])
+class UserUpdateAPIView(UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserDefaultShopUpdateSerializer
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def get_object(self):
+        return self.request.user
+
+
+@extend_schema(tags=['auth'])
+class AuthRetrieveAPIView(RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = AuthModelSerializer
+
+    def get_object(self):
+        return self.request.user
+
+
+@extend_schema(tags=['auth'])
+class AuthLogoutAPIView(APIView):
+    serializer_class = LogoutSerializer
+
+    def post(self, request, *args, **kwargs):
+        token = get_object_or_404(Token, user=request.user)
+        token.delete()
+        return Response(status=status.HTTP_200_OK)

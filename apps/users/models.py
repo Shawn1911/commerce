@@ -1,13 +1,12 @@
 from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin,
-                                        UserManager, )
+                                        UserManager,)
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db.models import (CASCADE, RESTRICT, SET_NULL, BigIntegerField,
                               BooleanField, CharField, DateField,
                               DateTimeField, EmailField, ForeignKey,
                               IntegerField, ManyToManyField, Model,
                               OneToOneField, PositiveIntegerField, TextChoices,
-                              TextField, URLField, )
-
+                              TextField, URLField,)
 from shared.django.models import CreatedBaseModel
 from users.managers import CustomUserManager
 
@@ -68,7 +67,7 @@ class User(AbstractBaseUser, PermissionsMixin):  # ✅
     email = EmailField('Email', unique=True)
     is_staff = BooleanField(default=False)
     is_active = BooleanField(default=False)
-
+    linked_account = ManyToManyField('users.LinkedAccount', through='UserLinkedAccount', related_name='accounts')
     language = ForeignKey('shops.Language', CASCADE, blank=True, null=True)
     public_offer = BooleanField('Ommaviy taklif', default=False)
     invitation_code = CharField('Taflifnoma kodi', max_length=25, unique=True, null=True)
@@ -128,3 +127,13 @@ class PlanInvoice(CreatedBaseModel):  # ✅
     plan_extended_from = DateField()
     plan_extended_until = DateField(null=True, blank=True)
     status = CharField(max_length=25, choices=Status.choices, db_default=Status.NEW)
+
+
+class LinkedAccount(Model):
+    name = CharField(max_length=40)
+
+
+class UserLinkedAccount(Model):
+    status = BooleanField(db_default=False)
+    user = ForeignKey('users.User', CASCADE, related_name='accounts')
+    linked = ForeignKey('users.LinkedAccount', CASCADE)

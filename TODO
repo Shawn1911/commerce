@@ -84,6 +84,12 @@ TASK
 1 Shop  category in english
 2. Test
 
+Clear everything and rewrite it.
+1. user app
+2. shop app
+3. user test
+4. shop test
+
 Libs
 drf-spectacular
 djangorestframework

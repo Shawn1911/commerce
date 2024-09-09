@@ -1,5 +1,6 @@
 from django.contrib.contenttypes.fields import (GenericForeignKey,
                                                 GenericRelation,)
+from django.core.exceptions import ValidationError
 from django.db.models import (CASCADE, BooleanField, CharField,
                               CheckConstraint, DateTimeField, DecimalField, F,
                               FloatField, ForeignKey, IntegerField,
@@ -11,6 +12,7 @@ from shared.django.models import CreatedBaseModel
 
 class Country(Model):  # ✅
     name = CharField('Nomi', max_length=100)
+    code = CharField('kodi', max_length=5, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Davlat'
@@ -241,7 +243,6 @@ class Product(Model):  # ✅
     length = IntegerField("Uzunligi", null=True, blank=True)
     height = IntegerField('Balandligi', null=True, blank=True)
     width = IntegerField("Kengligi", null=True, blank=True)
-
     ikpu_code = IntegerField('IKPU ko`di', null=True, blank=True)
     package_code = IntegerField('qadoq ko`di', null=True, blank=True)
     stock_status = CharField(max_length=100, choices=StockStatus.choices)
@@ -259,6 +260,23 @@ class Product(Model):  # ✅
         constraints = [
             CheckConstraint(check=Q(full_price__gte=F('price')), name='check_full_price')
         ]
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        if self.pk is None:
+
+            if (self.category.shop.plan_id == 1 and Product.objects.filter(category__shop=self.category.shop).
+                    select_related('category').count() >= 4):
+                raise ValidationError("Sizni maxsulotlarizga berilgan limitingiz tugagan")
+
+            if (self.category.shop.plan_id == 2 and Product.objects.filter(category__shop=self.category.shop).
+                    select_related('category').count() >= 1000):
+                raise ValidationError("Sizni maxsulotlarizga berilgan limitingiz tugagan")
+
+            if (self.category.shop.plan_id == 3 and Product.objects.filter(category__shop=self.category.shop).
+                    select_related('category').count() >= 1000):
+                raise ValidationError("Sizni maxsulotlarizga berilgan limitingiz tugagan")
+
+        super().save(force_insert, force_update, using, update_fields)
 
 
 class Attachment(CreatedBaseModel):

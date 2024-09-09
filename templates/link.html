@@ -1,0 +1,153 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+{% if language == 'en' %}
+    <body>
+    <div style="width:35rem;margin-left:auto;margin-right:auto">
+        <div class="adM"></div>
+        <div style="border:none;border-bottom:solid 1px #d0d0d0;text-align:center">
+            <div class="adM"></div>
+            <img src="https://ci3.googleusercontent.com/meips/ADKq_NaPJl4R98THMbMrfeUWIMmNywIO9UHJqVuSq8gzlCMWv4hfMfXccjWJ3bhaa8GygDHJKQu0qK3DQLgi_aClpBRebI41hjJrXCos68mLlPNbcC3SmemBA0Rb8JwmGWutZPk=s0-d-e1-ft#https://fra1.digitaloceanspaces.com/botcommerce/static/images/logo_mini.png"
+                 style="margin-bottom:1rem;text-align:center;width:5rem;margin-left:auto;margin-right:auto"
+                 class="CToWUd"
+                 data-bit="iit">
+        </div>
+        <div>
+            {% if type == 'change_password' %}
+                <h1>Oops, have you forgotten your password?</h1>
+                <p>Don't worry, we'll help you get it back. Follow the link below and set a new password.</p><br>
+            {% else %}
+                <h1>Welcome to Commerce.</h1>
+                <p>To start using, please confirm your email address by clicking on the button below.</p><br>
+            {% endif %}
+            <div style="text-align:center">
+                <a href="{{ confirmation_url }}"
+                   style="background:#3273dc;color:#fff;text-decoration:none;margin-top:10rem;padding:0.8rem 3rem;border-radius:0.5rem;display:inline"
+                   target="_blank"
+                   data-saferedirecturl="{{ confirmation_url }}">
+                    {% if type == 'change_password' %}
+                        Reset your password
+                    {% else %}
+                        Confirm
+                    {% endif %}
+                </a>
+                <br>
+                <br>
+                If the button does not work, follow this link
+                <a href="{{ confirmation_url }}" target="_blank"
+                   data-saferedirecturl="{{ confirmation_url }}">{{ confirmation_url }}
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:3rem">
+            <div style="color:#636363;text-align:center">
+                Made by <a href="{{ home_url }}">Commerce</a> team.<br>
+                All rights reserved
+            </div>
+            <div class="yj6qo"></div>
+            <div class="adL"></div>
+        </div>
+        <div class="adL"></div>
+    </div>
+    </body>
+{% elif language == 'ru' %}
+    <body>
+    <div style="width:35rem;margin-left:auto;margin-right:auto">
+        <div class="adM"></div>
+        <div style="border:none;border-bottom:solid 1px #d0d0d0;text-align:center">
+            <div class="adM"></div>
+            <img src="https://ci3.googleusercontent.com/meips/ADKq_NaPJl4R98THMbMrfeUWIMmNywIO9UHJqVuSq8gzlCMWv4hfMfXccjWJ3bhaa8GygDHJKQu0qK3DQLgi_aClpBRebI41hjJrXCos68mLlPNbcC3SmemBA0Rb8JwmGWutZPk=s0-d-e1-ft#https://fra1.digitaloceanspaces.com/botcommerce/static/images/logo_mini.png"
+                 style="margin-bottom:1rem;text-align:center;width:5rem;margin-left:auto;margin-right:auto"
+                 class="CToWUd"
+                 data-bit="iit">
+        </div>
+        <div>
+            {% if type == 'change_password' %}
+                <h1>Ой, вы забыли свой пароль?</h1>
+                <p>Ничего страшного, мы вам поможем восстановить. Перейдите по ссылке ниже и установите новый
+                    пароль.</p><br>
+            {% else %}
+                <h1>Добро пожаловать в Коммерцию.</h1>
+                <p>Чтобы начать использовать, пожалуйста, подтвердите свой адрес электронной почты, нажав кнопку
+                    ниже.</p><br>
+            {% endif %}
+            <div style="text-align:center">
+                <a href="{{ confirmation_url }}"
+                   style="background:#3273dc;color:#fff;text-decoration:none;margin-top:10rem;padding:0.8rem 3rem;border-radius:0.5rem;display:inline"
+                   target="_blank"
+                   data-saferedirecturl="{{ confirmation_url }}">
+                    {% if type == 'change_password' %}
+                        Сбросить пароль
+                    {% else %}
+                        Подтверждать
+                    {% endif %}
+                </a>
+                <br>
+                <br>
+                Если кнопка не работает, перейдите по этой ссылке
+                <a href="{{ confirmation_url }}" target="_blank"
+                   data-saferedirecturl="{{ confirmation_url }}">{{ confirmation_url }}
+                </a>
+            </div>
+        </div>
+
+        <div style="margin-top:3rem">
+            <div style="color:#636363;text-align:center">
+                Сделано командой <a href="{{ home_url }}">Коммерция</a>.<br>
+                Все права защищены
+            </div>
+            <div class="yj6qo"></div>
+            <div class="adL"></div>
+        </div>
+        <div class="adL"></div>
+    </div>
+    </body>
+{% else %}
+    <body>
+    <div style="width:35rem;margin-left:auto;margin-right:auto">
+        <div class="adM"></div>
+        <div style="border:none;border-bottom:solid 1px #d0d0d0;text-align:center">
+            <div class="adM"></div>
+            <img src="https://ci3.googleusercontent.com/meips/ADKq_NaPJl4R98THMbMrfeUWIMmNywIO9UHJqVuSq8gzlCMWv4hfMfXccjWJ3bhaa8GygDHJKQu0qK3DQLgi_aClpBRebI41hjJrXCos68mLlPNbcC3SmemBA0Rb8JwmGWutZPk=s0-d-e1-ft#https://fra1.digitaloceanspaces.com/botcommerce/static/images/logo_mini.png"
+                 style="margin-bottom:1rem;text-align:center;width:5rem;margin-left:auto;margin-right:auto"
+                 class="CToWUd"
+                 data-bit="iit">
+        </div>
+        <div>
+            {% if type == 'change_password' %}
+                <h1>Parolingizni unutdingizmi?</h1>
+                <p>Muammo yo'q, biz uni tiklashga yordam beramiz. Quyidagi havolaga o'ting va yangi parol o'rnating.</p>
+                <br>
+            {% else %}
+                <h1>Commerce ga xush kelibsiz.</h1>
+                <p>Foydalanishni boshlash uchun quyidagi tugmani bosish orqali elektron pochta manzilingizni
+                    tasdiqlang.</p><br>
+            {% endif %}
+            <div style="text-align:center">
+                <a href="{{ confirmation_url }}"
+                   style="background:#3273dc;color:#fff;text-decoration:none;margin-top:10rem;padding:0.8rem 3rem;border-radius:0.5rem;display:inline"
+                   target="_blank"
+                   data-saferedirecturl="{{ confirmation_url }}">
+                    {% if type == 'change_password' %}Parolni qayta o'rnating{% else %}Tasdiqlang{% endif %}
+                </a>
+                <br>
+                <br>
+                Agar tugma ishlamasa, ushbu havolaga o'ting
+                <a href="{{ confirmation_url }}" target="_blank"
+                   data-saferedirecturl="{{ confirmation_url }}">{{ confirmation_url }}
+                </a>
+            </div>
+        </div>
+        <div style="margin-top:3rem">
+            <div style="color:#636363;text-align:center">
+                <a href="{{ home_url }}">Commerce</a> jamoasi tomonidan yaratilgan.<br>
+                Barcha huquqlar himoyalangan
+            </div>
+            <div class="yj6qo"></div>
+            <div class="adL"></div>
+        </div>
+        <div class="adL"></div>
+    </div>
+    </body>
+{% endif %}
+</html>

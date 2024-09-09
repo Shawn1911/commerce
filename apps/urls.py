@@ -1,14 +1,13 @@
-
 from django.urls import include, path
-from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
-                                   SpectacularSwaggerView,)
+from users.views import (AuthLogoutAPIView, AuthRetrieveAPIView,
+                         ConfirmEmailAPIView, LoginAPIView,)
 
 
 urlpatterns = [
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
-
-    path('users/', include('users.urls', namespace='users')),
+    path('users/', include('users.urls')),
     path('shop/', include('shops.urls')),
+    path('confirm-email/<str:token>', ConfirmEmailAPIView.as_view(), name='confirm-email'),
+    path('token', LoginAPIView.as_view({'post': 'post'}), name='token'),
+    path('auth', AuthRetrieveAPIView.as_view()),
+    path('auth/signout', AuthLogoutAPIView.as_view()),
 ]

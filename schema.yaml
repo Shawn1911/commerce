@@ -1,0 +1,2195 @@
+openapi: 3.0.3
+info:
+  title: Commerce
+  version: python 3.12 django 5.07 drf 3.15
+paths:
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/v1/auth:
+    get:
+      operationId: api_v1_auth_retrieve
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthModel'
+          description: ''
+  /api/v1/auth/signout:
+    post:
+      operationId: api_v1_auth_signout_create
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/v1/confirm-email/{token}:
+    get:
+      operationId: api_v1_confirm_email_retrieve
+      parameters:
+      - in: path
+        name: token
+        schema:
+          type: string
+        required: true
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/v1/shop/country:
+    get:
+      operationId: api_v1_shop_country_list
+      tags:
+      - api
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CountryModel'
+          description: ''
+  /api/v1/shop/currency:
+    get:
+      operationId: api_v1_shop_currency_list
+      tags:
+      - api
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CurrencyModel'
+          description: ''
+  /api/v1/shop/shop:
+    get:
+      operationId: api_v1_shop_shop_list
+      tags:
+      - shops
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/list'
+          description: ''
+    post:
+      operationId: api_v1_shop_shop_create
+      tags:
+      - shops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/create'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/create'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/create'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/create'
+          description: ''
+  /api/v1/shop/shop-category:
+    get:
+      operationId: api_v1_shop_shop_category_list
+      tags:
+      - api
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShopCategoryModel'
+          description: ''
+  /api/v1/shop/shop-config:
+    get:
+      operationId: api_v1_shop_shop_config_list
+      tags:
+      - api
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LanguageDynamicFieldsModel'
+          description: ''
+  /api/v1/shop/shop/{id}/detail:
+    get:
+      operationId: api_v1_shop_shop_detail_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - shops
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopDynamicFieldsModel'
+          description: ''
+    put:
+      operationId: api_v1_shop_shop_detail_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - shops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShopUpdateModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ShopUpdateModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ShopUpdateModel'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopUpdateModel'
+          description: ''
+    patch:
+      operationId: api_v1_shop_shop_detail_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - shops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedShopUpdateModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedShopUpdateModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedShopUpdateModel'
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopUpdateModel'
+          description: ''
+    delete:
+      operationId: api_v1_shop_shop_detail_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - shops
+      security:
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/shop/shop/{shop_id}/categories:
+    get:
+      operationId: api_v1_shop_shop_categories_list
+      parameters:
+      - name: count
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: Enter a name to search for
+        schema:
+          type: string
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      - name: sort
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      tags:
+      - categories
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCategoryDynamicFieldsModelList'
+          description: ''
+    post:
+      operationId: api_v1_shop_shop_categories_create
+      parameters:
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          description: ''
+  /api/v1/shop/shop/{shop_id}/categories/{id}:
+    get:
+      operationId: api_v1_shop_shop_categories_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categories
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          description: ''
+    put:
+      operationId: api_v1_shop_shop_categories_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          description: ''
+    patch:
+      operationId: api_v1_shop_shop_categories_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoryDynamicFieldsModel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoryDynamicFieldsModel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCategoryDynamicFieldsModel'
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+          description: ''
+    delete:
+      operationId: api_v1_shop_shop_categories_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - categories
+      security:
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/shop/shop/{shop_id}/products:
+    get:
+      operationId: api_v1_shop_shop_products_list
+      parameters:
+      - name: count
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: Enter a name to search for
+        schema:
+          type: string
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      - name: sort
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      tags:
+      - products
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedproduct_listList'
+          description: ''
+    post:
+      operationId: api_v1_shop_shop_products_create
+      parameters:
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product_create'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/product_create'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/product_create'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_create'
+          description: ''
+  /api/v1/shop/shop/{shop_id}/products/{id}:
+    get:
+      operationId: api_v1_shop_shop_products_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - products
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_update'
+          description: ''
+    put:
+      operationId: api_v1_shop_shop_products_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product_update'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/product_update'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/product_update'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_update'
+          description: ''
+    patch:
+      operationId: api_v1_shop_shop_products_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patchedproduct_update'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Patchedproduct_update'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Patchedproduct_update'
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_update'
+          description: ''
+    delete:
+      operationId: api_v1_shop_shop_products_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product.
+        required: true
+      - in: path
+        name: shop_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - products
+      security:
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/token:
+    post:
+      operationId: api_v1_token_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Login'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Login'
+        required: true
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+          description: ''
+  /api/v1/users/confirm-email:
+    get:
+      operationId: api_v1_users_confirm_email_retrieve
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/v1/users/reset-link:
+    post:
+      operationId: api_v1_users_reset_link_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnterYourEmail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EnterYourEmail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EnterYourEmail'
+        required: true
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnterYourEmail'
+          description: ''
+  /api/v1/users/reset-password:
+    post:
+      operationId: api_v1_users_reset_password_create
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePassword'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UpdatePassword'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UpdatePassword'
+        required: true
+      security:
+      - tokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdatePassword'
+          description: ''
+  /api/v1/users/user:
+    put:
+      operationId: api_v1_users_user_update
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDefaultShopUpdate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserDefaultShopUpdate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserDefaultShopUpdate'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDefaultShopUpdate'
+          description: ''
+    patch:
+      operationId: api_v1_users_user_partial_update
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDefaultShopUpdate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDefaultShopUpdate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDefaultShopUpdate'
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDefaultShopUpdate'
+          description: ''
+components:
+  schemas:
+    AuthModel:
+      type: object
+      properties:
+        first_name:
+          type: string
+          title: Ism
+          maxLength: 150
+        last_name:
+          type: string
+          title: Familiya
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        type:
+          type: string
+          maxLength: 25
+        invitation_code:
+          type: string
+          nullable: true
+          title: Taflifnoma kodi
+          maxLength: 25
+        public_offer:
+          type: boolean
+          title: Ommaviy taklif
+        default_shop:
+          type: integer
+          nullable: true
+        language:
+          type: integer
+          nullable: true
+        linked_account:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserLinkedAccountModel'
+        token:
+          type: string
+          readOnly: true
+      required:
+      - email
+      - linked_account
+      - token
+      - type
+    CategoryDynamicFieldsModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Nomi
+          maxLength: 255
+        emoji:
+          type: string
+          nullable: true
+          maxLength: 25
+        show_in_ecommerce:
+          type: boolean
+          title: Web saytda ko'rsatish
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          title: Holati
+        description:
+          type: string
+          nullable: true
+          title: Tavsif
+        position:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        parent:
+          type: integer
+          nullable: true
+      required:
+      - id
+      - name
+      - show_in_ecommerce
+      - status
+    CountryModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Nomi
+          maxLength: 100
+      required:
+      - id
+      - name
+    CurrencyModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Nomi
+          maxLength: 100
+        order:
+          type: integer
+          maximum: 32767
+          minimum: 0
+          title: Rangi
+      required:
+      - id
+      - name
+    EnterYourEmail:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 50
+      required:
+      - email
+    LanguageDynamicFieldsModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          title: Nomi
+          maxLength: 50
+        code:
+          type: string
+          title: Kodi
+          maxLength: 10
+        icon:
+          type: string
+          title: Belgisi
+          maxLength: 10
+      required:
+      - code
+      - icon
+      - id
+      - title
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 50
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 50
+      required:
+      - email
+      - password
+    PaginatedCategoryDynamicFieldsModelList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryDynamicFieldsModel'
+    Paginatedproduct_listList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/product_list'
+    PatchedCategoryDynamicFieldsModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Nomi
+          maxLength: 255
+        emoji:
+          type: string
+          nullable: true
+          maxLength: 25
+        show_in_ecommerce:
+          type: boolean
+          title: Web saytda ko'rsatish
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          title: Holati
+        description:
+          type: string
+          nullable: true
+          title: Tavsif
+        position:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        parent:
+          type: integer
+          nullable: true
+    PatchedShopUpdateModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          title: Do'kon nomi
+          maxLength: 255
+        phone:
+          type: string
+          title: Biznes telefon raqami
+          maxLength: 50
+        phone_number:
+          type: string
+          title: Telefon raqami
+          maxLength: 50
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        lat:
+          type: number
+          format: double
+          nullable: true
+          title: Location lat
+        lon:
+          type: number
+          format: double
+          nullable: true
+          title: Location lon
+        has_terminal:
+          type: boolean
+        about_us:
+          type: string
+          nullable: true
+          title: Biz haqimizda
+        facebook:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        instagram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        telegram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        email:
+          type: string
+          format: uri
+          nullable: true
+          title: Elektron pochta
+          maxLength: 255
+        address:
+          type: string
+          nullable: true
+          title: Manzil
+          maxLength: 500
+        is_new_products_show:
+          type: boolean
+          title: '''Yangi mahsulotlar'' sahifasini ko''rsatish'
+        is_popular_products_show:
+          type: boolean
+          title: '''Ommabop mahsulotlar'' sahifasini ko''rsatish'
+        country:
+          type: integer
+          title: Ro'yxatdan o'tgan davlat
+        currency:
+          type: integer
+          title: Pul birligi
+        languages:
+          type: array
+          items:
+            type: integer
+            title: Til
+          title: Til
+    PatchedUserDefaultShopUpdate:
+      type: object
+      properties:
+        shop_id:
+          type: integer
+          writeOnly: true
+    Patchedproduct_update:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Mahsulot nomi
+          maxLength: 100
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          title: Sotuv narxi
+        full_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          nullable: true
+          title: Umumiy narxi
+        description:
+          type: string
+        has_available:
+          type: boolean
+          title: Mahsulotni o`chirish va yoqish
+        weight:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Vazni
+        length:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Uzunligi
+        height:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Balandligi
+        width:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Kengligi
+        ikpu_code:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: IKPU ko`di
+        package_code:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Qadoq ko`di
+        stock_status:
+          $ref: '#/components/schemas/StockStatusEnum'
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Mahsulot soni status indefinite bo`lganda chiqadi
+        barcode:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Barkod
+        vat_percent:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: QQS foizi
+        position:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Sort order
+        internal_notes:
+          type: string
+          nullable: true
+        unit:
+          $ref: '#/components/schemas/UnitEnum'
+        weight_class:
+          type: integer
+          nullable: true
+        length_class:
+          type: integer
+          nullable: true
+    PeriodTypeEnum:
+      enum:
+      - monthly
+      - annual
+      type: string
+      description: |-
+        * `monthly` - Monthly
+        * `annual` - Annual
+    PlanModel:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Nomi
+          maxLength: 150
+        code:
+          type: string
+          title: Kod
+          maxLength: 150
+        description:
+          type: string
+          title: Tavsif
+          maxLength: 150
+        quotas:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlanQuotasModel'
+          readOnly: true
+        pricing:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlanPricingModel'
+          readOnly: true
+      required:
+      - code
+      - description
+      - name
+      - pricing
+      - quotas
+    PlanPricingModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          title: Nomi
+          maxLength: 50
+        period_type:
+          allOf:
+          - $ref: '#/components/schemas/PeriodTypeEnum'
+          title: Davr turi
+        price:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          title: Narxi
+        original_price:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          title: Haqiqiy narxi
+        period:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Davr
+        currency:
+          type: integer
+        plan:
+          type: integer
+      required:
+      - created_at
+      - currency
+      - id
+      - name
+      - original_price
+      - period
+      - period_type
+      - plan
+      - price
+      - updated_at
+    PlanQuotasModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        value:
+          type: string
+          title: Qiymat
+          maxLength: 50
+      required:
+      - id
+      - name
+      - value
+    ShopCategoryModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Nomi
+          maxLength: 255
+        emoji:
+          type: string
+          nullable: true
+          maxLength: 25
+        show_in_ecommerce:
+          type: boolean
+          title: Web saytda ko'rsatish
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          title: Holati
+        description:
+          type: string
+          nullable: true
+          title: Tavsif
+        position:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        parent:
+          type: integer
+          nullable: true
+        shop:
+          type: integer
+      required:
+      - id
+      - name
+      - shop
+      - show_in_ecommerce
+      - status
+    ShopDynamicFieldsModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        plan:
+          allOf:
+          - $ref: '#/components/schemas/PlanModel'
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          title: Do'kon nomi
+          maxLength: 255
+        phone:
+          type: string
+          title: Biznes telefon raqami
+          maxLength: 50
+        phone_number:
+          type: string
+          title: Telefon raqami
+          maxLength: 50
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        lat:
+          type: number
+          format: double
+          nullable: true
+          title: Location lat
+        lon:
+          type: number
+          format: double
+          nullable: true
+          title: Location lon
+        starts_at:
+          type: string
+          format: time
+          nullable: true
+          title: Dan
+        ends_at:
+          type: string
+          format: time
+          nullable: true
+          title: Gacha
+        has_terminal:
+          type: boolean
+        about_us:
+          type: string
+          nullable: true
+          title: Biz haqimizda
+        facebook:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        instagram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        telegram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        email:
+          type: string
+          format: uri
+          nullable: true
+          title: Elektron pochta
+          maxLength: 255
+        address:
+          type: string
+          nullable: true
+          title: Manzil
+          maxLength: 500
+        is_new_products_show:
+          type: boolean
+          title: '''Yangi mahsulotlar'' sahifasini ko''rsatish'
+        is_popular_products_show:
+          type: boolean
+          title: '''Ommabop mahsulotlar'' sahifasini ko''rsatish'
+        country:
+          type: integer
+          title: Ro'yxatdan o'tgan davlat
+        category:
+          type: integer
+          title: Kategoriyalar
+        currency:
+          type: integer
+          title: Pul birligi
+        languages:
+          type: array
+          items:
+            type: integer
+            title: Til
+          title: Til
+        services:
+          type: array
+          items:
+            type: integer
+          readOnly: true
+      required:
+      - category
+      - country
+      - created_at
+      - currency
+      - has_terminal
+      - id
+      - name
+      - phone
+      - phone_number
+      - plan
+      - services
+      - status
+      - updated_at
+    ShopUpdateModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          title: Do'kon nomi
+          maxLength: 255
+        phone:
+          type: string
+          title: Biznes telefon raqami
+          maxLength: 50
+        phone_number:
+          type: string
+          title: Telefon raqami
+          maxLength: 50
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        lat:
+          type: number
+          format: double
+          nullable: true
+          title: Location lat
+        lon:
+          type: number
+          format: double
+          nullable: true
+          title: Location lon
+        has_terminal:
+          type: boolean
+        about_us:
+          type: string
+          nullable: true
+          title: Biz haqimizda
+        facebook:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        instagram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        telegram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        email:
+          type: string
+          format: uri
+          nullable: true
+          title: Elektron pochta
+          maxLength: 255
+        address:
+          type: string
+          nullable: true
+          title: Manzil
+          maxLength: 500
+        is_new_products_show:
+          type: boolean
+          title: '''Yangi mahsulotlar'' sahifasini ko''rsatish'
+        is_popular_products_show:
+          type: boolean
+          title: '''Ommabop mahsulotlar'' sahifasini ko''rsatish'
+        country:
+          type: integer
+          title: Ro'yxatdan o'tgan davlat
+        currency:
+          type: integer
+          title: Pul birligi
+        languages:
+          type: array
+          items:
+            type: integer
+            title: Til
+          title: Til
+      required:
+      - country
+      - created_at
+      - currency
+      - has_terminal
+      - id
+      - name
+      - phone
+      - phone_number
+      - status
+      - updated_at
+    StatusEnum:
+      enum:
+      - active
+      - inactive
+      type: string
+      description: |-
+        * `active` - Active
+        * `inactive` - Inactive
+    StockStatusEnum:
+      enum:
+      - fixed
+      - indefinite
+      - not_available
+      type: string
+      description: |-
+        * `fixed` - Fixed
+        * `indefinite` - Indefinite
+        * `not_available` - Not available
+    UnitEnum:
+      enum:
+      - item
+      - weight
+      type: string
+      description: |-
+        * `item` - Item
+        * `weight` - Weight
+    UpdatePassword:
+      type: object
+      properties:
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 50
+        confirm_password:
+          type: string
+          writeOnly: true
+          maxLength: 50
+      required:
+      - confirm_password
+      - password
+    UserDefaultShopUpdate:
+      type: object
+      properties:
+        shop_id:
+          type: integer
+          writeOnly: true
+      required:
+      - shop_id
+    UserLinkedAccountModel:
+      type: object
+      properties:
+        status:
+          type: boolean
+        linked:
+          type: integer
+        linked_name:
+          type: string
+          readOnly: true
+      required:
+      - linked
+      - linked_name
+      - status
+    create:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Do'kon nomi
+          maxLength: 255
+        phone:
+          type: string
+          title: Biznes telefon raqami
+          maxLength: 50
+        country:
+          type: integer
+          title: Ro'yxatdan o'tgan davlat
+        category:
+          type: integer
+          title: Kategoriyalar
+        currency:
+          type: integer
+          title: Pul birligi
+      required:
+      - category
+      - country
+      - currency
+      - name
+      - phone
+    list:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        plan:
+          allOf:
+          - $ref: '#/components/schemas/PlanModel'
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          title: Do'kon nomi
+          maxLength: 255
+        phone:
+          type: string
+          title: Biznes telefon raqami
+          maxLength: 50
+        phone_number:
+          type: string
+          title: Telefon raqami
+          maxLength: 50
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        lat:
+          type: number
+          format: double
+          nullable: true
+          title: Location lat
+        lon:
+          type: number
+          format: double
+          nullable: true
+          title: Location lon
+        starts_at:
+          type: string
+          format: time
+          nullable: true
+          title: Dan
+        ends_at:
+          type: string
+          format: time
+          nullable: true
+          title: Gacha
+        has_terminal:
+          type: boolean
+        about_us:
+          type: string
+          nullable: true
+          title: Biz haqimizda
+        facebook:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        instagram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        telegram:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 255
+        email:
+          type: string
+          format: uri
+          nullable: true
+          title: Elektron pochta
+          maxLength: 255
+        address:
+          type: string
+          nullable: true
+          title: Manzil
+          maxLength: 500
+        is_new_products_show:
+          type: boolean
+          title: '''Yangi mahsulotlar'' sahifasini ko''rsatish'
+        is_popular_products_show:
+          type: boolean
+          title: '''Ommabop mahsulotlar'' sahifasini ko''rsatish'
+        country:
+          type: integer
+          title: Ro'yxatdan o'tgan davlat
+        category:
+          type: integer
+          title: Kategoriyalar
+        currency:
+          type: integer
+          title: Pul birligi
+        languages:
+          type: array
+          items:
+            type: integer
+            title: Til
+          title: Til
+        services:
+          type: array
+          items:
+            type: integer
+          readOnly: true
+      required:
+      - category
+      - country
+      - created_at
+      - currency
+      - has_terminal
+      - id
+      - name
+      - phone
+      - phone_number
+      - plan
+      - services
+      - status
+      - updated_at
+    product_create:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Mahsulot nomi
+          maxLength: 100
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          title: Sotuv narxi
+        full_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          nullable: true
+          title: Umumiy narxi
+        description:
+          type: string
+        stock_status:
+          $ref: '#/components/schemas/StockStatusEnum'
+        unit:
+          $ref: '#/components/schemas/UnitEnum'
+        category:
+          type: integer
+      required:
+      - category
+      - description
+      - name
+      - price
+      - stock_status
+      - unit
+    product_list:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Mahsulot nomi
+          maxLength: 100
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          title: Sotuv narxi
+        full_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          nullable: true
+          title: Umumiy narxi
+        description:
+          type: string
+        has_available:
+          type: boolean
+          title: Mahsulotni o`chirish va yoqish
+        weight:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Vazni
+        length:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Uzunligi
+        height:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Balandligi
+        width:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Kengligi
+        ikpu_code:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: IKPU ko`di
+        package_code:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Qadoq ko`di
+        stock_status:
+          $ref: '#/components/schemas/StockStatusEnum'
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Mahsulot soni status indefinite bo`lganda chiqadi
+        barcode:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Barkod
+        vat_percent:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: QQS foizi
+        position:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Sort order
+        internal_notes:
+          type: string
+          nullable: true
+        unit:
+          $ref: '#/components/schemas/UnitEnum'
+        category:
+          type: integer
+        weight_class:
+          type: integer
+          nullable: true
+        length_class:
+          type: integer
+          nullable: true
+      required:
+      - category
+      - description
+      - id
+      - name
+      - position
+      - price
+      - stock_status
+      - unit
+    product_update:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Mahsulot nomi
+          maxLength: 100
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          title: Sotuv narxi
+        full_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          nullable: true
+          title: Umumiy narxi
+        description:
+          type: string
+        has_available:
+          type: boolean
+          title: Mahsulotni o`chirish va yoqish
+        weight:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Vazni
+        length:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Uzunligi
+        height:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Balandligi
+        width:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Kengligi
+        ikpu_code:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: IKPU ko`di
+        package_code:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Qadoq ko`di
+        stock_status:
+          $ref: '#/components/schemas/StockStatusEnum'
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Mahsulot soni status indefinite bo`lganda chiqadi
+        barcode:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: Barkod
+        vat_percent:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: QQS foizi
+        position:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Sort order
+        internal_notes:
+          type: string
+          nullable: true
+        unit:
+          $ref: '#/components/schemas/UnitEnum'
+        weight_class:
+          type: integer
+          nullable: true
+        length_class:
+          type: integer
+          nullable: true
+      required:
+      - description
+      - id
+      - name
+      - position
+      - price
+      - stock_status
+      - unit
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"

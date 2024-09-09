@@ -1,0 +1,16 @@
+[
+  {
+    "model": "users.linkedaccount",
+    "pk": 1,
+    "fields": {
+      "name": "telegram"
+    }
+  },
+  {
+    "model": "users.linkedaccount",
+    "pk": 2,
+    "fields": {
+      "name": "facebook"
+    }
+  }
+]
